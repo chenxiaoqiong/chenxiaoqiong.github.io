@@ -233,7 +233,7 @@
 <li>获取nginx，在<a href="http://nginx.org/en/download.html上可以获取当前最新的版本。" target="_blank" rel="external">http://nginx.org/en/download.html上可以获取当前最新的版本。</a></li>
 <li>解压缩nginx-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./configure</li>
-<li>make &amp; make install<br>可能出现错误：<br>make: <em>*</em> No rule to make target <code>build&#39;, needed by</code>default’.  Stop.<br>解决办法：<br>./configure  –sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\<br>–pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\<br>–with-http_ssl_module\<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>{//指定依赖路径<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>}</li>
+<li>make &amp; make install<br>可能出现错误：<br>make: <em>*</em> No rule to make target ‘build’, needed by ‘default’.  Stop.<br>解决办法：<br>./configure  –sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\<br>–pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\<br>–with-http_ssl_module\<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>{//指定依赖路径<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>}</li>
 </ol>
 <h4 id="nginx启动："><a href="#nginx启动：" class="headerlink" title="nginx启动："></a>nginx启动：</h4><pre><code>cd usr/local/nginx/sbin
 ./nginx
