@@ -17,20 +17,20 @@
 <!--<![endif]-->
 
 <head>
-  <title>Hello World | Hexo</title>
+  <title>Nginx安装与配置 | ChenXiaoqiong</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Hexo">
-    <meta name="author" content="John Doe">
+    <meta name="generator" content="ChenXiaoqiong">
+    <meta name="author" content="ChenXiaoqiong">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
     <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
 
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="ChenXiaoqiong" type="application/atom+xml">
     <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
 	
     <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
@@ -154,10 +154,10 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li><a href="/" class="animsition-link">ChenXiaoqiong</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
+                            <li><a href="https://github.com/chenxiaoqiong" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                             
                             <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
@@ -197,24 +197,51 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2016-10-14T07:02:22.994Z" itemprop="datePublished">
-          2016-10-14
+      <time datetime="2016-10-17T09:04:27.000Z" itemprop="datePublished">
+          2016-10-17
       </time>
     
+    
+    | 
+    <a href='/tags/nginx/'>nginx</a>
+    
+    
 </span>
-                <h1>Hello World</h1>
+                <h1>Nginx安装与配置</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      		<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h4 id="1-1-安装pcre"><a href="#1-1-安装pcre" class="headerlink" title="1.1 安装pcre"></a>1.1 安装pcre</h4><ol>
+<li>获取pcre编译安装包，在<a href="http://www.pcre.org/上可以获取当前最新的版本" target="_blank" rel="external">http://www.pcre.org/上可以获取当前最新的版本</a></li>
+<li>解压缩pcre-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure。</li>
+<li>make &amp; make install<br>可能发生错误<br>make: <em>*</em>No targets specified and no makefile found. Stop.<br>解决方法<br>./configure -prefix=/usr/local -with-shared-without-debug<br>make<br>make install</li>
+</ol>
+<h4 id="1-2-安装openssl"><a href="#1-2-安装openssl" class="headerlink" title="1.2 安装openssl"></a>1.2 安装openssl</h4><ol>
+<li>获取openssl编译安装包，在<a href="http://www.openssl.org/source/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.openssl.org/source/上可以获取当前最新的版本。</a></li>
+<li>解压缩openssl-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./config。</li>
+<li>make &amp; make install</li>
+</ol>
+<h4 id="1-3-安装zlib"><a href="#1-3-安装zlib" class="headerlink" title="1.3 安装zlib"></a>1.3 安装zlib</h4><ol>
+<li>获取zlib编译安装包，在<a href="http://www.zlib.net/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.zlib.net/上可以获取当前最新的版本。</a></li>
+<li>解压缩openssl-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure。</li>
+<li>make &amp; make install</li>
+</ol>
+<h4 id="1-4-安装nginx"><a href="#1-4-安装nginx" class="headerlink" title="1.4 安装nginx"></a>1.4 安装nginx</h4><ol>
+<li>获取nginx，在<a href="http://nginx.org/en/download.html上可以获取当前最新的版本。" target="_blank" rel="external">http://nginx.org/en/download.html上可以获取当前最新的版本。</a></li>
+<li>解压缩nginx-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure</li>
+<li>make &amp; make install<br>可能出现错误：<br>make: <em>*</em> No rule to make target <code>build&#39;, needed by</code>default’.  Stop.<br>解决办法：<br>./configure  –sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\<br>–pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\<br>–with-http_ssl_module\<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>{//指定依赖路径<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>}</li>
+</ol>
+<h4 id="nginx启动："><a href="#nginx启动：" class="headerlink" title="nginx启动："></a>nginx启动：</h4><pre><code>cd usr/local/nginx/sbin
+./nginx
+如果无法启动执行命令：
+ln -s /usr/local/lib/libpcre.so.1 /lib64
+</code></pre><p>nginx的4种配置方式：<br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br>nginx 的 upstream目前支持 4 种方式的分配<br>1)、轮询（默认）<br>      每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。<br>2)、weight<br>      指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。<br>2)、ip_hash<br>      每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。<br>3)、fair（第三方）<br>      按后端服务器的响应时间来分配请求，响应时间短的优先分配。<br>4)、url_hash（第三方）</p>
+<p>配置参考文档<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
+<p>静态资源配置：<br>    location ~* .(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {<br>    root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹和静态资源<br>    expires      30d;<br>    }</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
@@ -222,10 +249,14 @@
         <nav class="pagination" role="pagination">
     
     
+    <a class="pull-right" href="/2016-10-14/hello-world/">
+        Hello World →
+    </a>
+    
 </nav>
 
         <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016/10/14/hello-world/" data-title="Hello World" data-url="http://yoursite.com/2016/10/14/hello-world/"></div>
+<div class="ds-thread" data-thread-key="2016-10-17/nginx/" data-title="Nginx安装与配置" data-url="http://yoursite.com/2016-10-17/nginx/"></div>
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"duoshuo_name"};
 (function() {
@@ -249,14 +280,14 @@ var duoshuoQuery = {short_name:"duoshuo_name"};
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By ChenXiaoqiong. All Rights Reserved.
                 </p>
                 <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>
             <div class="social">
                 <ul>
                     
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
+                    <li><a href="https://github.com/chenxiaoqiong" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
                     
                     <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
