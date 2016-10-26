@@ -216,7 +216,9 @@
 <li>获取pcre编译安装包，在<a href="http://www.pcre.org/上可以获取当前最新的版本" target="_blank" rel="external">http://www.pcre.org/上可以获取当前最新的版本</a></li>
 <li>解压缩pcre-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./configure。</li>
-<li>make &amp; make install<br>可能发生错误<br>make: <em>*</em>No targets specified and no makefile found. Stop.<br>解决方法<br>./configure -prefix=/usr/local -with-shared-without-debug<br>make<br>make install</li>
+<li><p>make &amp; make install</p>
+<p><code>可能发生错误</code><br><code>make: ***No targets specified and no makefile found. Stop.</code><br><code>解决方法</code><br><code>./configure -prefix=/usr/local -with-shared-without-debug</code><br><code>make</code><br><code>make install</code></p>
+</li>
 </ol>
 <h4 id="1-2-安装openssl"><a href="#1-2-安装openssl" class="headerlink" title="1.2 安装openssl"></a>1.2 安装openssl</h4><ol>
 <li>获取openssl编译安装包，在<a href="http://www.openssl.org/source/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.openssl.org/source/上可以获取当前最新的版本。</a></li>
@@ -234,16 +236,24 @@
 <li>获取nginx，在<a href="http://nginx.org/en/download.html上可以获取当前最新的版本。" target="_blank" rel="external">http://nginx.org/en/download.html上可以获取当前最新的版本。</a></li>
 <li>解压缩nginx-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./configure</li>
-<li>make &amp; make install<br>可能出现错误：<br>make: <em>*</em> No rule to make target ‘build’, needed by ‘default’.  Stop.<br>解决办法：<br>./configure  –sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\<br>–pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\<br>–with-http_ssl_module\<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>{//指定依赖路径<br>–with-pcre=/usr/local/nginx/pcre-8.36 \<br>–with-zlib=/usr/local/nginx/zlib-1.2.8 \<br>–with-openssl=/usr/local/nginx/openssl-1.0.1h<br>}</li>
+<li>make &amp; make install<br><code>可能出现错误：</code><br><code>make: *** No rule to make target &#39;build&#39;, needed by &#39;default&#39;.  Stop.</code><br><code>解决办法：</code><br><code>./configure  --sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\</code><br><code>--pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\</code><br><code>--with-http_ssl_module\</code><br><code>//指定依赖路径</code><br><code>--with-pcre=/usr/local/nginx/pcre-8.36 \</code><br><code>--with-zlib=/usr/local/nginx/zlib-1.2.8 \</code><br><code>--with-openssl=/usr/local/nginx/openssl-1.0.1h</code></li>
 </ol>
 <h4 id="nginx启动："><a href="#nginx启动：" class="headerlink" title="nginx启动："></a>nginx启动：</h4><pre><code>cd usr/local/nginx/sbin
 ./nginx
 如果无法启动执行命令：
 ln -s /usr/local/lib/libpcre.so.1 /lib64
-</code></pre><p>nginx的4种配置方式：<br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br>nginx 的 upstream目前支持 4 种方式的分配<br>1)、轮询（默认）<br>      每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。<br>2)、weight<br>      指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。<br>2)、ip_hash<br>      每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。<br>3)、fair（第三方）<br>      按后端服务器的响应时间来分配请求，响应时间短的优先分配。<br>4)、url_hash（第三方）</p>
-<p>配置参考文档<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
-<p>静态资源配置：<br>    location ~* .(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {<br>    root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹和静态资源<br>    expires      30d;<br>    }</p>
-
+</code></pre><h4 id="nginx的4种配置方式："><a href="#nginx的4种配置方式：" class="headerlink" title="nginx的4种配置方式："></a>nginx的4种配置方式：</h4><p>nginx 的 upstream目前支持 4 种方式的分配 </p>
+<h5 id="1-、轮询（默认）"><a href="#1-、轮询（默认）" class="headerlink" title="1)、轮询（默认）"></a>1)、轮询（默认）</h5><p>   每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 </p>
+<h5 id="2-、weight"><a href="#2-、weight" class="headerlink" title="2)、weight"></a>2)、weight</h5><p>   指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 </p>
+<h5 id="2-、ip-hash"><a href="#2-、ip-hash" class="headerlink" title="2)、ip_hash"></a>2)、ip_hash</h5><p>   每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。  </p>
+<h5 id="3-、fair（第三方）"><a href="#3-、fair（第三方）" class="headerlink" title="3)、fair（第三方）"></a>3)、fair（第三方）</h5><p>   按后端服务器的响应时间来分配请求，响应时间短的优先分配。  </p>
+<h5 id="4-、url-hash（第三方）"><a href="#4-、url-hash（第三方）" class="headerlink" title="4)、url_hash（第三方）"></a>4)、url_hash（第三方）</h5><p>配置参考文档<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
+<p>静态资源配置：server里面添加如下配置</p>
+<pre><code>location ~* \.(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {
+root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹和静态资源
+expires      30d;
+}
+</code></pre>
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
