@@ -242,19 +242,19 @@
 ./nginx
 如果无法启动执行命令：
 ln -s /usr/local/lib/libpcre.so.1 /lib64
-</code></pre><h4 id="nginx的4种配置方式："><a href="#nginx的4种配置方式：" class="headerlink" title="nginx的4种配置方式："></a>nginx的4种配置方式：</h4><p>nginx 的 upstream目前支持 4 种方式的分配 </p>
+</code></pre><h4 id="nginx重启："><a href="#nginx重启：" class="headerlink" title="nginx重启："></a>nginx重启：</h4><pre><code>nginx –s reload
+</code></pre><h4 id="负载均衡的4种配置方式："><a href="#负载均衡的4种配置方式：" class="headerlink" title="负载均衡的4种配置方式："></a>负载均衡的4种配置方式：</h4><p>nginx 的 upstream目前支持 4 种方式的分配 </p>
 <h5 id="1-、轮询（默认）"><a href="#1-、轮询（默认）" class="headerlink" title="1)、轮询（默认）"></a>1)、轮询（默认）</h5><p>   每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 </p>
 <h5 id="2-、weight"><a href="#2-、weight" class="headerlink" title="2)、weight"></a>2)、weight</h5><p>   指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 </p>
 <h5 id="2-、ip-hash"><a href="#2-、ip-hash" class="headerlink" title="2)、ip_hash"></a>2)、ip_hash</h5><p>   每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。  </p>
 <h5 id="3-、fair（第三方）"><a href="#3-、fair（第三方）" class="headerlink" title="3)、fair（第三方）"></a>3)、fair（第三方）</h5><p>   按后端服务器的响应时间来分配请求，响应时间短的优先分配。  </p>
 <h5 id="4-、url-hash（第三方）"><a href="#4-、url-hash（第三方）" class="headerlink" title="4)、url_hash（第三方）"></a>4)、url_hash（第三方）</h5><p>配置参考文档<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
-<p>静态资源配置：server里面添加如下配置</p>
-<pre><code>location ~* \.(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {
+<h5 id="静态资源配置"><a href="#静态资源配置" class="headerlink" title="静态资源配置"></a>静态资源配置</h5><pre><code>location ~* \.(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {
 root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹和静态资源
 expires      30d;
 }
 </code></pre><hr>
-<h2 id="相关链接："><a href="#相关链接：" class="headerlink" title="相关链接："></a>相关链接：</h2><p><a href="http://www.cnblogs.com/skynet/p/4146083.html（吴秦）" target="_blank" rel="external">http://www.cnblogs.com/skynet/p/4146083.html（吴秦）</a></p>
+<h2 id="相关链接："><a href="#相关链接：" class="headerlink" title="相关链接："></a>相关链接：</h2><p><a href="http://www.cnblogs.com/skynet/p/4146083.html（吴秦）" target="_blank" rel="external">http://www.cnblogs.com/skynet/p/4146083.html（吴秦）</a><br><a href="http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html" target="_blank" rel="external">http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html</a></p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
