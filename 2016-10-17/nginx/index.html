@@ -1,354 +1,523 @@
-<!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<!--<![endif]-->
 
+ <!DOCTYPE HTML>
+<html >
 <head>
-  <title>Nginx安装与配置 | ChenXiaoqiong</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="ChenXiaoqiong">
+  <meta charset="UTF-8">
+  <meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a">
+  <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
+<meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
+  
+    <title>Nginx安装与配置 | ChenXiaoqiong</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
     <meta name="author" content="ChenXiaoqiong">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    
+    <meta name="description" content="安装步骤安装pcre
+获取pcre编译安装包，在http://www.pcre.org/ 上可以获取当前最新的版本
+解压缩pcre-xx.tar.gz包。
+进入解压缩目录，执行./configure。
+make &amp;amp; make install
 
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
 
-    <link rel="alternate" href="/atom.xml" title="ChenXiaoqiong" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-	
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
+ 可能发生错误    make: ***No ">
     
     
-
-    <!-- Custom stylesheet, (add custom styles here, always load last) -->
-    <!-- Load our stylesheet for IE8 -->
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
-
-    <!-- Google Webfonts (Monserrat 400/700, Open Sans 400/600) -->
-    <link href='//fonts.useso.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-    <link href='//fonts.useso.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
-
-    <!-- Load our fonts individually if IE8+, to avoid faux bold & italic rendering -->
-    <!--[if IE]>
-    <link href='http://fonts.useso.com/css?family=Montserrat:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.useso.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
-    <![endif]-->
-
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-
-  
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+    
+    
+    <link rel="alternate" href="atom.xml" title="ChenXiaoqiong" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            var _bdId ='391982416296a0d54221f59fe35250d4';
+             hm.src = "//hm.baidu.com/hm.js?" + _bdId;
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+     
 </head>
 
-<!--
-<body class="post-template">
--->
-<body id="index" class="lightnav animsition">
-
-      <!-- ============================ Off-canvas navigation =========================== -->
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+  <body>
+    <header>
+      <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
-                </ul>
-            </li>
-            
-            
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
-    </div>
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.png" alt="ChenXiaoqiong" title="ChenXiaoqiong"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="ChenXiaoqiong">ChenXiaoqiong</a></h1>
+				<a class="blog-motto">爱编程，爱学习，爱挑战！程序媛就是我，我就是陈小琼 ^_^</a>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">首页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/categories/develop/">技术</a></li>
+					
+						<li><a href="/">生活</a></li>
+					
+						<li><a href="/">其他</a></li>
+					
+					<li>
+					
+                                            <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
+                                            <label>Search</label>
+                                        <input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="Search"><br>
+					
+					</li>
+				</ul>
+                            </nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
     
-    <!-- ============================ END Off-canvas navigation =========================== -->
-
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
-
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!-- Nav logo -->
-                    <div class="logo">
-                        <a href="/" title="Logo" class="animsition-link">
-                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
-                        </a>
-                    </div>
-                    <!-- // Nav logo -->
-                    <!-- Info-bar -->
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="/" class="animsition-link">ChenXiaoqiong</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
-                            
-                            <li><a href="https://github.com/chenxiaoqiong" title="Github" target="_blank"><i class="icon-github"></i></a></li>
-                            
-                            
-                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
-                            
-                            
-                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
-                            
-                            
-                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
-                            
-                            
-                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
-                            
-                            <li class="nolink"><span>Welcome!</span></li>
-                        </ul>
-                    </nav>
-                    <!--// Info-bar -->
-                </div>
-                <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
-        </div>
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2016-10-17T09:04:27.000Z" itemprop="datePublished">
-          2016-10-17
-      </time>
+      <a href="/2016-10-17/nginx/" title="Nginx安装与配置" itemprop="url">Nginx安装与配置</a>
+  </h1>
+  <p class="article-author">By
     
+      <a href="http://yoursite.com" title="ChenXiaoqiong">ChenXiaoqiong</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2016-10-17T09:04:27.000Z" itemprop="datePublished">2016-10-17</time>
+    Updated:<time datetime="2016-11-01T10:02:22.828Z" itemprop="dateModified">2016-11-01</time>
     
-    | 
-    <a href='/tags/nginx/'>nginx</a>
-    
-    
-</span>
-                <h1>Nginx安装与配置</h1>
-            </div>
-        </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h4 id="1-1-安装pcre"><a href="#1-1-安装pcre" class="headerlink" title="1.1 安装pcre"></a>1.1 安装pcre</h4><ol>
-<li>获取pcre编译安装包，在<a href="http://www.pcre.org/上可以获取当前最新的版本" target="_blank" rel="external">http://www.pcre.org/上可以获取当前最新的版本</a></li>
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">Contents</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pcre"><span class="toc-number">1.1.</span> <span class="toc-text">安装pcre</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装openssl"><span class="toc-number">1.2.</span> <span class="toc-text">安装openssl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装zlib"><span class="toc-number">1.3.</span> <span class="toc-text">安装zlib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nginx"><span class="toc-number">1.4.</span> <span class="toc-text">安装nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">2.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx启动与重启"><span class="toc-number">2.1.</span> <span class="toc-text">nginx启动与重启</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.2.</span> <span class="toc-text">测试效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#负载均衡的4种配置方式"><span class="toc-number">3.1.</span> <span class="toc-text">负载均衡的4种配置方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源配置"><span class="toc-number">3.2.</span> <span class="toc-text">静态资源配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关链接："><span class="toc-number">4.</span> <span class="toc-text">相关链接：</span></a></li></ol>
+		</div>
+		
+		<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="安装pcre"><a href="#安装pcre" class="headerlink" title="安装pcre"></a>安装pcre</h3><ol>
+<li>获取pcre编译安装包，在<a href="http://www.pcre.org/" target="_blank" rel="external">http://www.pcre.org/</a> 上可以获取当前最新的版本</li>
 <li>解压缩pcre-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./configure。</li>
-<li><p>make &amp; make install</p>
-<p><code>可能发生错误</code><br><code>make: ***No targets specified and no makefile found. Stop.</code><br><code>解决方法</code><br><code>./configure -prefix=/usr/local -with-shared-without-debug</code><br><code>make</code><br><code>make install</code></p>
-</li>
+<li>make &amp; make install</li>
 </ol>
-<h4 id="1-2-安装openssl"><a href="#1-2-安装openssl" class="headerlink" title="1.2 安装openssl"></a>1.2 安装openssl</h4><ol>
+<blockquote>
+<p> <code>可能发生错误</code><br>    <code>make: ***No targets specified and no makefile found. Stop.</code><br>    <code>解决方法</code><br>    <code>./configure -prefix=/usr/local -with-shared-without-debug</code><br>    <code>make</code><br>    <code>make install</code></p>
+</blockquote>
+<h3 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h3><ol>
 <li>获取openssl编译安装包，在<a href="http://www.openssl.org/source/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.openssl.org/source/上可以获取当前最新的版本。</a></li>
 <li>解压缩openssl-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./config。</li>
 <li>make &amp; make install</li>
 </ol>
-<h4 id="1-3-安装zlib"><a href="#1-3-安装zlib" class="headerlink" title="1.3 安装zlib"></a>1.3 安装zlib</h4><ol>
+<h3 id="安装zlib"><a href="#安装zlib" class="headerlink" title="安装zlib"></a>安装zlib</h3><ol>
 <li>获取zlib编译安装包，在<a href="http://www.zlib.net/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.zlib.net/上可以获取当前最新的版本。</a></li>
 <li>解压缩openssl-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./configure。</li>
 <li>make &amp; make install</li>
 </ol>
-<h4 id="1-4-安装nginx"><a href="#1-4-安装nginx" class="headerlink" title="1.4 安装nginx"></a>1.4 安装nginx</h4><ol>
+<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><ol>
 <li>获取nginx，在<a href="http://nginx.org/en/download.html上可以获取当前最新的版本。" target="_blank" rel="external">http://nginx.org/en/download.html上可以获取当前最新的版本。</a></li>
 <li>解压缩nginx-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./configure</li>
-<li>make &amp; make install<br><code>可能出现错误：</code><br><code>make: *** No rule to make target &#39;build&#39;, needed by &#39;default&#39;.  Stop.</code><br><code>解决办法：</code><br><code>./configure  --sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\</code><br><code>--pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\</code><br><code>--with-http_ssl_module\</code><br><code>//指定依赖路径</code><br><code>--with-pcre=/usr/local/nginx/pcre-8.36 \</code><br><code>--with-zlib=/usr/local/nginx/zlib-1.2.8 \</code><br><code>--with-openssl=/usr/local/nginx/openssl-1.0.1h</code></li>
+<li>make &amp; make install</li>
 </ol>
-<h4 id="nginx启动与重启："><a href="#nginx启动与重启：" class="headerlink" title="nginx启动与重启："></a>nginx启动与重启：</h4><pre><code>cd usr/local/nginx/sbin
+<blockquote>
+<p><code>可能出现错误：</code><br>    <code>make: *** No rule to make target &#39;build&#39;, needed by &#39;default&#39;.  Stop.</code><br>    <code>解决办法：</code><br>    <code>./configure  --sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\</code><br>    <code>--pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\</code><br>    <code>--with-http_ssl_module\</code><br>    <code>//指定依赖路径</code><br>    <code>--with-pcre=/usr/local/nginx/pcre-8.36 \</code><br>    <code>--with-zlib=/usr/local/nginx/zlib-1.2.8 \</code><br>    <code>--with-openssl=/usr/local/nginx/openssl-1.0.1h</code></p>
+</blockquote>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="nginx启动与重启"><a href="#nginx启动与重启" class="headerlink" title="nginx启动与重启"></a>nginx启动与重启</h3><blockquote>
+<pre><code>cd usr/local/nginx/sbin
 ./nginx
 如果无法启动执行命令：
 ln -s /usr/local/lib/libpcre.so.1 /lib64
 重启：
 ./nginx –s reload
-</code></pre><p>更详细可参考：<a href="http://www.cnblogs.com/jianxie/p/3990377.html" target="_blank" rel="external">http://www.cnblogs.com/jianxie/p/3990377.html</a></p>
-<h4 id="负载均衡的4种配置方式："><a href="#负载均衡的4种配置方式：" class="headerlink" title="负载均衡的4种配置方式："></a>负载均衡的4种配置方式：</h4><p>nginx 的 upstream目前支持 4 种方式的分配 </p>
-<h5 id="1-、轮询（默认）"><a href="#1-、轮询（默认）" class="headerlink" title="1)、轮询（默认）"></a>1)、轮询（默认）</h5><p>   每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 </p>
-<h5 id="2-、weight"><a href="#2-、weight" class="headerlink" title="2)、weight"></a>2)、weight</h5><p>   指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 </p>
-<h5 id="2-、ip-hash"><a href="#2-、ip-hash" class="headerlink" title="2)、ip_hash"></a>2)、ip_hash</h5><p>   每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。  </p>
-<h5 id="3-、fair（第三方）"><a href="#3-、fair（第三方）" class="headerlink" title="3)、fair（第三方）"></a>3)、fair（第三方）</h5><p>   按后端服务器的响应时间来分配请求，响应时间短的优先分配。  </p>
-<h5 id="4-、url-hash（第三方）"><a href="#4-、url-hash（第三方）" class="headerlink" title="4)、url_hash（第三方）"></a>4)、url_hash（第三方）</h5><p>更详细可参考：<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
-<h5 id="静态资源配置"><a href="#静态资源配置" class="headerlink" title="静态资源配置"></a>静态资源配置</h5><pre><code>location ~* \.(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {
-root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹和静态资源
+</code></pre></blockquote>
+<h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><p>启动之后打开浏览器输入localhost，出现如下页面，恭喜你安装成功！<br><img src="/img/nginx.jpg" alt=""></p>
+<p>更详细可参考：<a href="http://www.cnblogs.com/jianxie/p/3990377.html" target="_blank" rel="external">http://www.cnblogs.com/jianxie/p/3990377.html</a></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="负载均衡的4种配置方式"><a href="#负载均衡的4种配置方式" class="headerlink" title="负载均衡的4种配置方式"></a>负载均衡的4种配置方式</h3><ul>
+<li><p>轮询（默认）<br> 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 </p>
+</li>
+<li><p>weight<br> 指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 </p>
+</li>
+<li><p>ip_hash<br> 每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。  </p>
+</li>
+<li><p>第三方<br> fair（按后端服务器的响应时间来分配请求，响应时间短的优先分配。）<br> url_hash</p>
+</li>
+</ul>
+<p>更详细可参考：<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
+<h3 id="静态资源配置"><a href="#静态资源配置" class="headerlink" title="静态资源配置"></a>静态资源配置</h3><blockquote>
+<pre><code>location ~* \.(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {
+root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹静态资源
 expires      30d;
 }
-</code></pre><hr>
+</code></pre></blockquote>
+<hr>
 <h2 id="相关链接："><a href="#相关链接：" class="headerlink" title="相关链接："></a>相关链接：</h2><p><a href="http://www.cnblogs.com/skynet/p/4146083.html（吴秦）" target="_blank" rel="external">http://www.cnblogs.com/skynet/p/4146083.html（吴秦）</a><br><a href="http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html" target="_blank" rel="external">http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="pagination" role="pagination">
-    
-    
-    <a class="pull-right" href="/2016-10-14/hello-world/">
-        Hello World →
-    </a>
-    
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/nginx/">nginx</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/develop/">技术</a>►<a class="article-category-link" href="/categories/develop/nginx/">nginx</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2016-10-17/nginx/" data-title="Nginx安装与配置 | ChenXiaoqiong" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2016-10-14/hello-world/"  title="Hello World">
+ <strong>NEXT:</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
+
 </nav>
 
-        <div class="duoshuo">
-<div class="ds-thread" data-thread-key="2016-10-17/nginx/" data-title="Nginx安装与配置" data-url="http://yoursite.com/2016-10-17/nginx/"></div>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"chenxiaoqiong"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-	 || document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-</div>
-    </div>
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="Nginx安装与配置" data-thread-key="nginx" data-author-key="ChenXiaoqiong" data-url="http://yoursite.com/post/nginx"></div>
+	
 </section>
 
 
-      
-<!-- ============================ Footer =========================== -->
 
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    <!-- &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, -->
-					Content By ChenXiaoqiong. All Rights Reserved.
-                (<span id="busuanzi_container_page_pv">
-				  总访问量<span id="busuanzi_value_page_pv"></span>
-				</span>)</p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/chenxiaoqiong" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">Contents</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pcre"><span class="toc-number">1.1.</span> <span class="toc-text">安装pcre</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装openssl"><span class="toc-number">1.2.</span> <span class="toc-text">安装openssl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装zlib"><span class="toc-number">1.3.</span> <span class="toc-text">安装zlib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nginx"><span class="toc-number">1.4.</span> <span class="toc-text">安装nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">2.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx启动与重启"><span class="toc-number">2.1.</span> <span class="toc-text">nginx启动与重启</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.2.</span> <span class="toc-text">测试效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#负载均衡的4种配置方式"><span class="toc-number">3.1.</span> <span class="toc-text">负载均衡的4种配置方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源配置"><span class="toc-number">3.2.</span> <span class="toc-text">静态资源配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关链接："><span class="toc-number">4.</span> <span class="toc-text">相关链接：</span></a></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<aside class="clearfix">
+<div id="authorInfo">
+	
+		<div class="author-logo"></div>		
+	
+	<div class="social-list" class="clearfix">
+		
+		<a href="http://weibo.com//u/5121672767?refer_flag=1005055014_&amp;is_hot=1" target="_blank" title="weibo"></a>
+		
+		
+		
+		<a href="https://github.com/chenxiaoqiong" target="_blank" title="github"></a>
+		
+		
+		
+	</div>
+</div>
+
+  
+<div class="category-block">
+  <h3 class="asidetitle">分类</h3>
+     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">技术</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/develop/nginx/">nginx</a><span class="category-list-count">1</span></li></ul></li></ul>
+</div>
+
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">标签</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a>
+    </div>
+  </div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+      <li><a href="http://pgeeker.com/" target="_blank" title="coney">pgeeker's Blog</a></li>
+      <li><a href="http://gengbiao.me" target="_blank" title="coney">coney's Blog</a></li>
+    </ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+    
+            <p class="copyright"> © 2016 
+		
+		<a href="http://yoursite.com" target="_blank" title="ChenXiaoqiong">ChenXiaoqiong</a>
+		
+            && Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
+            (<span id="busuanzi_value_page_pv"></span>)</div>
 </footer>
-
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
-        
-<!-- Resizable 'on-demand' full-height hero -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
-    
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
     };
-    
-    resizeHero();
-    
-    $(window).resize(function () {
-        resizeHero();
-    });
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
 </script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/jquery.flexslider-min.js"></script><!-- Flexslider plugin -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
 
-<!-- Initiate flexslider plugin -->
 <script type="text/javascript">
-    $(document).ready(function($) {
-      $('.flexslider').flexslider({
-        animation: "fade",
-        prevText: "",
-        nextText: "",
-        directionNav: true
-      });
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
     });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
 </script>
 
-</body>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"chenxiaoqiong"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<script>
+    
+        var _bdImg = '4';
+    
+    window._bd_share_config={
+        "common":{
+            "bdSnsKey":{
+
+            },
+            "bdText":"",
+            "bdMini":"2",
+            "bdMiniList":[
+                "qzone",
+                "tsina",
+                "weixin",
+                "renren",
+                "tqq",
+                "tieba",
+                "douban",
+                "sqq",
+                "diandian",
+                "huaban",
+                "youdao",
+                "mail",
+                "ty",
+                "fbook",
+                "twi",
+                "linkedin",
+                "copy",
+                "print"
+            ],
+            "bdPic":"",
+            "bdStyle":"0",
+            "bdSize":"16"
+        },
+        "slide":{
+            "type":"slide",
+            "bdImg":_bdImg,
+            "bdPos":"right",
+            "bdTop":"350"
+        },
+        "image":{
+            "viewList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ],
+            "viewText":"分享：",
+            "viewSize":"16"
+        },
+        "selectShare":{
+            "bdContainerClass":null,
+            "bdSelectMiniList":[
+                "weixin",
+                "qzone",
+                "tsina",
+                "renren",
+                "douban",
+                "tqq"
+            ]
+        }
+    };
+    with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+
+
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'null', 'null');  
+ga('send', 'pageview');
+</script>
+
+
+  </body>
 </html>
+
