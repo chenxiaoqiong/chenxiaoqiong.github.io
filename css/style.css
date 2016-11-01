@@ -1916,6 +1916,48 @@ section.comment {
 #back-top:hover span {
   border-bottom: 10px solid #000;
 }
+.category-list {
+  font-size: 1em;
+  padding: 15px 20px;
+}
+.category-list .category-list-count {
+  margin-left: 8px;
+  font-size: 0.9em;
+  color: color-meta;
+}
+.category-list .category-list-count:before {
+  content: '(';
+}
+.category-list .category-list-count:after {
+  content: ')';
+}
+ul,
+ol,
+dl {
+  list-style: none;
+}
+ul ul,
+ol ul,
+dl ul,
+ul ol,
+ol ol,
+dl ol,
+ul dl,
+ol dl,
+dl dl {
+  margin-left: 20px;
+}
+ul ul li:before,
+ol ul li:before,
+dl ul li:before,
+ul ol li:before,
+ol ol li:before,
+dl ol li:before,
+ul dl li:before,
+ol dl li:before,
+dl dl li:before {
+  content: '';
+}
 footer {
   margin-top: 3em;
   margin-bottom: 3em;
