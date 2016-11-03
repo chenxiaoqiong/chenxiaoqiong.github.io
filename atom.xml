@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ChenXiaoqiong</title>
+  <subtitle>爱编程，爱学习，爱挑战！程序媛就是我，我就是陈小琼 ^_^</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://chenxiaoqiong.github.io/"/>
+  <updated>2016-11-03T06:37:23.175Z</updated>
+  <id>http://chenxiaoqiong.github.io/</id>
+  
+  <author>
+    <name>ChenXiaoqiong</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>idea(IntelliJ IDEA)快捷键</title>
+    <link href="http://chenxiaoqiong.github.io/2016-11-03/idea/"/>
+    <id>http://chenxiaoqiong.github.io/2016-11-03/idea/</id>
+    <published>2016-11-03T02:09:23.000Z</published>
+    <updated>2016-11-03T06:37:23.175Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>IDEA 全称IntelliJ IDEA，是java语言开发的集成环境，IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能代码助手、代码自动提示、重构、J2EE支持、Ant、JUnit、CVS整合、代码审查、 创新的GUI设计等方面的功能可以说是超常的。IDEA是JetBrains公司的产品，这家公司总部位于捷克共和国的首都布拉格，开发人员以严谨著称的东欧程序员为主。</p>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><h3 id="最常用快捷键"><a href="#最常用快捷键" class="headerlink" title="最常用快捷键"></a>最常用快捷键</h3><p>Ctrl+N   查找类<br>Ctrl+Shift+N 查找文件<br>Alt+回车 导入包,自动修正<br>Alt+Insert 生成代码(如get,set方法,构造函数等)<br>Ctrl+X 删除行<br>Ctrl+D 复制行<br>Ctrl+/ 或 Ctrl+Shift+/  注释（// 或者/<em>…</em>/ ）<br>Ctrl+E 最近打开的文件<br>Ctrl+G 定位到某行<br>Ctrl+R 替换文本<br>Ctrl+F 查找文本<br>Ctrl+Shift+R 替换全局文本<br>Ctrl+Shift+F 查找全局文本<br>Ctrl+Alt+L  格式化代码<br>Ctrl+Alt+O 优化导入的类和包</p>
+<h3 id="查询快捷键"><a href="#查询快捷键" class="headerlink" title="查询快捷键"></a>查询快捷键</h3><p>CTRL+N   查找类<br>CTRL+SHIFT+N  查找文件<br>CTRL+SHIFT+ALT+N 查找类中的方法或变量<br>CIRL+B   找变量的来源<br>CTRL+ALT+B  找所有的子类<br>CTRL+SHIFT+B  找变量的类<br>CTRL+G   定位行<br>CTRL+F   在当前窗口查找文本<br>CTRL+SHIFT+F  在指定窗口查找文本<br>CTRL+R   在 当前窗口替换文本<br>CTRL+SHIFT+R  在指定窗口替换文本<br>ALT+SHIFT+C  查找修改的文件<br>CTRL+E   最近打开的文件<br>F3   向下查找关键字出现位置<br>SHIFT+F3  向上一个关键字出现位置<br>F4   查找变量来源<br>CTRL+ALT+F7  选中的字符查找工程出现的地方<br>CTRL+SHIFT+O  弹出显示查找内容</p>
+<h3 id="自动代码"><a href="#自动代码" class="headerlink" title="自动代码"></a>自动代码</h3><p>ALT+回车  导入包,自动修正<br>CTRL+ALT+L  格式化代码<br>CTRL+ALT+I  自动缩进<br>CTRL+ALT+O  优化导入的类和包<br>ALT+INSERT  生成代码(如GET,SET方法,构造函数等)<br>CTRL+E 最近更改的代码<br>CTRL+SHIFT+SPACE 自动补全代码<br>CTRL+空格  代码提示<br>CTRL+ALT+SPACE  类名或接口名提示<br>CTRL+P   方法参数提示<br>CTRL+J   自动代码<br>CTRL+ALT+T  把选中的代码放在 TRY{} IF{} ELSE{} 里</p>
+<h3 id="复制快捷方式"><a href="#复制快捷方式" class="headerlink" title="复制快捷方式"></a>复制快捷方式</h3><p>CTRL+D   复制行<br>CTRL+X   剪切,删除行  </p>
+<h3 id="其他快捷方式"><a href="#其他快捷方式" class="headerlink" title="其他快捷方式"></a>其他快捷方式</h3><p>CIRL+U   大小写切换<br>CTRL+Z   倒退<br>CTRL+SHIFT+Z  向前<br>CTRL+ALT+F12  资源管理器打开文件夹<br>ALT+F1   查找文件所在目录位置<br>SHIFT+ALT+INSERT 竖编辑模式<br>CTRL+/   注释//<br>CTRL+SHIFT+/  注释/<em>…</em>/<br>CTRL+W   选中代码，连续按会有其他效果<br>CTRL+B   快速打开光标处的类或方法<br>ALT+ ←/→  切换代码视图<br>CTRL+ALT ←/→  返回上次编辑的位置<br>ALT+ ↑/↓  在方法间快速移动定位<br>SHIFT+F6  重构-重命名<br>CTRL+H   显示类结构图<br>CTRL+Q   显示注释文档<br>ALT+1   快速打开或隐藏工程面板<br>CTRL+SHIFT+UP/DOWN 代码向上/下移动。<br>CTRL+UP/DOWN  光标跳转到第一行或最后一行下<br>ESC   光标返回编辑框<br>SHIFT+ESC  光标返回编辑框,关闭无用的窗口<br>F1   帮助千万别按,很卡!<br>CTRL+F4   非常重要下班都用</p>
+<h2 id="快捷键设置"><a href="#快捷键设置" class="headerlink" title="快捷键设置"></a>快捷键设置</h2><p>file&gt;setting&gt;keymap<br><img src="/img/imgs/idea1.png" alt=""><br><img src="/img/imgs/idea2.png" alt=""><br>可以选择自己喜欢的模式，包括eclipse。也可以设置每一个快捷键，不过感觉太麻烦了</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;IDEA 全称IntelliJ IDEA，是java语言开发的集成环境，IntelliJ在业界被公认为最好的java开发工具之一，尤其在智能
+    
+    </summary>
+    
+      <category term="技术" scheme="http://chenxiaoqiong.github.io/categories/develop/"/>
+    
+      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.github.io/categories/develop/IntelliJ-IDEA/"/>
+    
+    
+      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.github.io/tags/IntelliJ-IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx安装与配置</title>
+    <link href="http://chenxiaoqiong.github.io/2016-10-17/nginx/"/>
+    <id>http://chenxiaoqiong.github.io/2016-10-17/nginx/</id>
+    <published>2016-10-17T09:04:27.000Z</published>
+    <updated>2016-11-03T06:34:28.927Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="安装pcre"><a href="#安装pcre" class="headerlink" title="安装pcre"></a>安装pcre</h3><ol>
+<li>获取pcre编译安装包，在<a href="http://www.pcre.org/" target="_blank" rel="external">http://www.pcre.org/</a> 上可以获取当前最新的版本</li>
+<li>解压缩pcre-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure。</li>
+<li>make &amp; make install</li>
+</ol>
+<blockquote>
+<p> <code>可能发生错误</code><br>    <code>make: ***No targets specified and no makefile found. Stop.</code><br>    <code>解决方法</code><br>    <code>./configure -prefix=/usr/local -with-shared-without-debug</code><br>    <code>make</code><br>    <code>make install</code></p>
+</blockquote>
+<h3 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h3><ol>
+<li>获取openssl编译安装包，在<a href="http://www.openssl.org/source/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.openssl.org/source/上可以获取当前最新的版本。</a></li>
+<li>解压缩openssl-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./config。</li>
+<li>make &amp; make install</li>
+</ol>
+<h3 id="安装zlib"><a href="#安装zlib" class="headerlink" title="安装zlib"></a>安装zlib</h3><ol>
+<li>获取zlib编译安装包，在<a href="http://www.zlib.net/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.zlib.net/上可以获取当前最新的版本。</a></li>
+<li>解压缩openssl-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure。</li>
+<li>make &amp; make install</li>
+</ol>
+<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><ol>
+<li>获取nginx，在<a href="http://nginx.org/en/download.html上可以获取当前最新的版本。" target="_blank" rel="external">http://nginx.org/en/download.html上可以获取当前最新的版本。</a></li>
+<li>解压缩nginx-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure</li>
+<li>make &amp; make install</li>
+</ol>
+<blockquote>
+<p><code>可能出现错误：</code><br>    <code>make: *** No rule to make target &#39;build&#39;, needed by &#39;default&#39;.  Stop.</code><br>    <code>解决办法：</code><br>    <code>./configure  --sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\</code><br>    <code>--pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\</code><br>    <code>--with-http_ssl_module\</code><br>    <code>//指定依赖路径</code><br>    <code>--with-pcre=/usr/local/nginx/pcre-8.36 \</code><br>    <code>--with-zlib=/usr/local/nginx/zlib-1.2.8 \</code><br>    <code>--with-openssl=/usr/local/nginx/openssl-1.0.1h</code></p>
+</blockquote>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="nginx启动与重启"><a href="#nginx启动与重启" class="headerlink" title="nginx启动与重启"></a>nginx启动与重启</h3><blockquote>
+<pre><code>cd usr/local/nginx/sbin
+./nginx
+如果无法启动执行命令：
+ln -s /usr/local/lib/libpcre.so.1 /lib64
+重启：
+./nginx –s reload
+</code></pre></blockquote>
+<h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><p>启动之后打开浏览器输入localhost，出现如下页面，恭喜你安装成功！<br><img src="/img/imgs/nginx.jpg" alt=""></p>
+<p>更详细可参考：<a href="http://www.cnblogs.com/jianxie/p/3990377.html" target="_blank" rel="external">http://www.cnblogs.com/jianxie/p/3990377.html</a></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="负载均衡的4种配置方式"><a href="#负载均衡的4种配置方式" class="headerlink" title="负载均衡的4种配置方式"></a>负载均衡的4种配置方式</h3><ul>
+<li><p>轮询（默认）<br> 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 </p>
+</li>
+<li><p>weight<br> 指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 </p>
+</li>
+<li><p>ip_hash<br> 每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。  </p>
+</li>
+<li><p>第三方<br> fair（按后端服务器的响应时间来分配请求，响应时间短的优先分配。）<br> url_hash</p>
+</li>
+</ul>
+<p>更详细可参考：<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
+<h3 id="静态资源配置"><a href="#静态资源配置" class="headerlink" title="静态资源配置"></a>静态资源配置</h3><blockquote>
+<pre><code>location ~* \.(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {
+root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹静态资源
+expires      30d;
+}
+</code></pre></blockquote>
+<hr>
+<h2 id="相关链接："><a href="#相关链接：" class="headerlink" title="相关链接："></a>相关链接：</h2><p><a href="http://www.cnblogs.com/skynet/p/4146083.html（吴秦）" target="_blank" rel="external">http://www.cnblogs.com/skynet/p/4146083.html（吴秦）</a><br><a href="http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html" target="_blank" rel="external">http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;安装步骤&quot;&gt;&lt;a href=&quot;#安装步骤&quot; class=&quot;headerlink&quot; title=&quot;安装步骤&quot;&gt;&lt;/a&gt;安装步骤&lt;/h2&gt;&lt;h3 id=&quot;安装pcre&quot;&gt;&lt;a href=&quot;#安装pcre&quot; class=&quot;headerlink&quot; title=&quot;安装pcr
+    
+    </summary>
+    
+      <category term="技术" scheme="http://chenxiaoqiong.github.io/categories/develop/"/>
+    
+      <category term="nginx" scheme="http://chenxiaoqiong.github.io/categories/develop/nginx/"/>
+    
+    
+      <category term="nginx" scheme="http://chenxiaoqiong.github.io/tags/nginx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://chenxiaoqiong.github.io/2016-10-14/hello-world/"/>
+    <id>http://chenxiaoqiong.github.io/2016-10-14/hello-world/</id>
+    <published>2016-10-14T07:02:22.994Z</published>
+    <updated>2016-11-01T09:38:06.086Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://chenxiaoqiong.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>
