@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenxiaoqiong.github.io/"/>
-  <updated>2016-11-03T06:37:23.175Z</updated>
+  <updated>2016-11-04T08:26:34.547Z</updated>
   <id>http://chenxiaoqiong.github.io/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>生活如雨，有伞就好！</title>
+    <link href="http://chenxiaoqiong.github.io/2016-11-04/life/"/>
+    <id>http://chenxiaoqiong.github.io/2016-11-04/life/</id>
+    <published>2016-11-04T07:02:03.000Z</published>
+    <updated>2016-11-04T08:26:34.547Z</updated>
+    
+    <content type="html"><![CDATA[<p>其实生活就是一场雨，<br>有伞就能平安度过，<br>没有伞，就会被雨淋成落汤鸡。<br>朋友，你有伞吗？</p>
+<p><img src="/img/life/life1.png" alt=""><br>或许没有伞的人居多，<br>因为没伞，被雨淋得稀里哗啦。<br>每个人都想有一把伞，<br>在生活中遮风避雨。<br>可伞在哪里？</p>
+<p><img src="/img/life/life2.png" alt=""><br>若别人能够给予，<br>当然心怀感恩、一路同行。<br>若无人给予，<br>不妨自己造一把伞，<br>撑自己的伞，风雨无阻。</p>
+<p><img src="/img/life/life4.png" alt=""><br>生活如雨，有伞就好！<br>不管是自己撑起的，还是别人给的。</p>
+<p><img src="/img/life/life5.png" alt=""><br>生活如雨，有伞就好！<br>要学会自己制造伞，<br>让自己在风雨中行走，在大浪中激闯！</p>
+<p><img src="/img/life/life6.png" alt=""><br>生活如雨，有伞就好！<br>记得，没有伞也不要怕，<br>别人能趟过去，自己也可以过去。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;其实生活就是一场雨，&lt;br&gt;有伞就能平安度过，&lt;br&gt;没有伞，就会被雨淋成落汤鸡。&lt;br&gt;朋友，你有伞吗？&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/life/life1.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;或许没有伞的人居多，&lt;br&gt;因为没伞，被雨淋得稀里哗啦。&lt;br&gt;每个
+    
+    </summary>
+    
+      <category term="生活" scheme="http://chenxiaoqiong.github.io/categories/life/"/>
+    
+      <category term="美文" scheme="http://chenxiaoqiong.github.io/categories/life/essay/"/>
+    
+    
+      <category term="美文" scheme="http://chenxiaoqiong.github.io/tags/%E7%BE%8E%E6%96%87/"/>
+    
+  </entry>
   
   <entry>
     <title>idea(IntelliJ IDEA)快捷键</title>
