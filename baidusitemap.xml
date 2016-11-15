@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+
     
     
     
   <url>
-    <loc>http://chenxiaoqiong.github.io/2016-11-04/life/</loc>
+    <loc>http://chenxiaoqiong.me/2016-11-04/life/</loc>
     <lastmod>2016-11-04T08:26:34.547Z</lastmod>
     <data>
         <display>
         <title>生活如雨，有伞就好！</title>
         <pubTime>2016-11-04T07:02:03.000Z</pubTime>
         
-        <tag>美文 </tag>
+        <tag>美文</tag>
          
          
            
              
-              <breadCrumb title="生活" url="http://chenxiaoqiong.github.io/categories/life/"/>
+              <breadCrumb title="生活" url="http://chenxiaoqiong.me/categories/life/"/>
           
              
-              <breadCrumb title="美文" url="http://chenxiaoqiong.github.io/categories/life/essay/"/>
+              <breadCrumb title="美文" url="http://chenxiaoqiong.me/categories/life/essay/"/>
           
         </display>
     </data>
@@ -28,22 +29,22 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.github.io/2016-11-03/idea/</loc>
+    <loc>http://chenxiaoqiong.me/2016-11-03/idea/</loc>
     <lastmod>2016-11-03T06:37:23.175Z</lastmod>
     <data>
         <display>
         <title>idea(IntelliJ IDEA)快捷键</title>
         <pubTime>2016-11-03T02:09:23.000Z</pubTime>
         
-        <tag>IntelliJ IDEA </tag>
+        <tag>IntelliJ IDEA</tag>
          
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.github.io/categories/develop/"/>
+              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
           
              
-              <breadCrumb title="IntelliJ IDEA" url="http://chenxiaoqiong.github.io/categories/develop/IntelliJ-IDEA/"/>
+              <breadCrumb title="IntelliJ IDEA" url="http://chenxiaoqiong.me/categories/develop/IntelliJ-IDEA/"/>
           
         </display>
     </data>
@@ -51,22 +52,22 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.github.io/2016-10-17/nginx/</loc>
+    <loc>http://chenxiaoqiong.me/2016-10-17/nginx/</loc>
     <lastmod>2016-11-03T06:34:28.927Z</lastmod>
     <data>
         <display>
         <title>Nginx安装与配置</title>
         <pubTime>2016-10-17T09:04:27.000Z</pubTime>
         
-        <tag>nginx </tag>
+        <tag>nginx</tag>
          
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.github.io/categories/develop/"/>
+              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
           
              
-              <breadCrumb title="nginx" url="http://chenxiaoqiong.github.io/categories/develop/nginx/"/>
+              <breadCrumb title="nginx" url="http://chenxiaoqiong.me/categories/develop/nginx/"/>
           
         </display>
     </data>
@@ -74,14 +75,14 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.github.io/2016-10-14/hello-world/</loc>
+    <loc>http://chenxiaoqiong.me/2016-10-14/hello-world/</loc>
     <lastmod>2016-11-01T09:38:06.086Z</lastmod>
     <data>
         <display>
         <title>Hello World</title>
         <pubTime>2016-10-14T07:02:22.994Z</pubTime>
         
-        <tag>hexo </tag>
+        <tag>hexo</tag>
          
          
            
