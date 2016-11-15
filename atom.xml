@@ -4,9 +4,9 @@
   <subtitle>爱编程，爱学习，爱挑战！程序媛就是我，我就是陈小琼 ^_^</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://chenxiaoqiong.github.io/"/>
+  <link href="http://chenxiaoqiong.me/"/>
   <updated>2016-11-04T08:26:34.547Z</updated>
-  <id>http://chenxiaoqiong.github.io/</id>
+  <id>http://chenxiaoqiong.me/</id>
   
   <author>
     <name>ChenXiaoqiong</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>生活如雨，有伞就好！</title>
-    <link href="http://chenxiaoqiong.github.io/2016-11-04/life/"/>
-    <id>http://chenxiaoqiong.github.io/2016-11-04/life/</id>
+    <link href="http://chenxiaoqiong.me/2016-11-04/life/"/>
+    <id>http://chenxiaoqiong.me/2016-11-04/life/</id>
     <published>2016-11-04T07:02:03.000Z</published>
     <updated>2016-11-04T08:26:34.547Z</updated>
     
@@ -37,19 +37,19 @@
     
     </summary>
     
-      <category term="生活" scheme="http://chenxiaoqiong.github.io/categories/life/"/>
+      <category term="生活" scheme="http://chenxiaoqiong.me/categories/life/"/>
     
-      <category term="美文" scheme="http://chenxiaoqiong.github.io/categories/life/essay/"/>
+      <category term="美文" scheme="http://chenxiaoqiong.me/categories/life/essay/"/>
     
     
-      <category term="美文" scheme="http://chenxiaoqiong.github.io/tags/%E7%BE%8E%E6%96%87/"/>
+      <category term="美文" scheme="http://chenxiaoqiong.me/tags/%E7%BE%8E%E6%96%87/"/>
     
   </entry>
   
   <entry>
     <title>idea(IntelliJ IDEA)快捷键</title>
-    <link href="http://chenxiaoqiong.github.io/2016-11-03/idea/"/>
-    <id>http://chenxiaoqiong.github.io/2016-11-03/idea/</id>
+    <link href="http://chenxiaoqiong.me/2016-11-03/idea/"/>
+    <id>http://chenxiaoqiong.me/2016-11-03/idea/</id>
     <published>2016-11-03T02:09:23.000Z</published>
     <updated>2016-11-03T06:37:23.175Z</updated>
     
@@ -68,19 +68,19 @@
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.github.io/categories/develop/"/>
+      <category term="技术" scheme="http://chenxiaoqiong.me/categories/develop/"/>
     
-      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.github.io/categories/develop/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.me/categories/develop/IntelliJ-IDEA/"/>
     
     
-      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.github.io/tags/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.me/tags/IntelliJ-IDEA/"/>
     
   </entry>
   
   <entry>
     <title>Nginx安装与配置</title>
-    <link href="http://chenxiaoqiong.github.io/2016-10-17/nginx/"/>
-    <id>http://chenxiaoqiong.github.io/2016-10-17/nginx/</id>
+    <link href="http://chenxiaoqiong.me/2016-10-17/nginx/"/>
+    <id>http://chenxiaoqiong.me/2016-10-17/nginx/</id>
     <published>2016-10-17T09:04:27.000Z</published>
     <updated>2016-11-03T06:34:28.927Z</updated>
     
@@ -151,19 +151,19 @@ expires      30d;
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.github.io/categories/develop/"/>
+      <category term="技术" scheme="http://chenxiaoqiong.me/categories/develop/"/>
     
-      <category term="nginx" scheme="http://chenxiaoqiong.github.io/categories/develop/nginx/"/>
+      <category term="nginx" scheme="http://chenxiaoqiong.me/categories/develop/nginx/"/>
     
     
-      <category term="nginx" scheme="http://chenxiaoqiong.github.io/tags/nginx/"/>
+      <category term="nginx" scheme="http://chenxiaoqiong.me/tags/nginx/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://chenxiaoqiong.github.io/2016-10-14/hello-world/"/>
-    <id>http://chenxiaoqiong.github.io/2016-10-14/hello-world/</id>
+    <link href="http://chenxiaoqiong.me/2016-10-14/hello-world/"/>
+    <id>http://chenxiaoqiong.me/2016-10-14/hello-world/</id>
     <published>2016-10-14T07:02:22.994Z</published>
     <updated>2016-11-01T09:38:06.086Z</updated>
     
@@ -185,7 +185,7 @@ expires      30d;
     </summary>
     
     
-      <category term="hexo" scheme="http://chenxiaoqiong.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="http://chenxiaoqiong.me/tags/hexo/"/>
     
   </entry>
   
