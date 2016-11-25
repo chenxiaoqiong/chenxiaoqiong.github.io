@@ -7,15 +7,19 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>生活如雨，有伞就好！ | ChenXiaoqiong</title>
+    <title>tomcat配置https协议访问 | ChenXiaoqiong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="ChenXiaoqiong">
     
-    <meta name="description" content="其实生活就是一场雨，有伞就能平安度过，没有伞，就会被雨淋成落汤鸡。朋友，你有伞吗？
-或许没有伞的人居多，因为没伞，被雨淋得稀里哗啦。每个人都想有一把伞，在生活中遮风避雨。可伞在哪里？
-若别人能够给予，当然心怀感恩、一路同行。若无人给予，不妨自己造一把伞，撑自己的伞，风雨无阻。
-生活如雨，有伞就好！不">
+    <meta name="description" content="当遇到支付等安全性要求较高的情况时需要使用https协议，在此记录一下配置方式，方便以后查看，也希望能帮到其他朋友。
+
+HTTPS协议详解  HTTPS是HTTP的安全版，其与http的主要区别如下：
+　　
+
+https协议需要到ca申请证书，一般免费证书很少，需要交费。
+
+http是超文本传输协议">
     
     
     
@@ -108,15 +112,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016-11-04/life/" title="生活如雨，有伞就好！" itemprop="url">生活如雨，有伞就好！</a>
+      <a href="/2016-11-25/https/" title="tomcat配置https协议访问" itemprop="url">tomcat配置https协议访问</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://chenxiaoqiong.me" title="ChenXiaoqiong">ChenXiaoqiong</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-11-04T07:02:03.000Z" itemprop="datePublished">2016-11-04</time>
-    Updated:<time datetime="2016-11-04T08:26:34.547Z" itemprop="dateModified">2016-11-04</time>
+    <time datetime="2016-11-25T08:34:53.000Z" itemprop="datePublished">2016-11-25</time>
+    Updated:<time datetime="2016-11-25T09:58:36.092Z" itemprop="dateModified">2016-11-25</time>
     
   </p>
 </header>
@@ -125,15 +129,42 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">Contents</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS协议详解"><span class="toc-number">1.</span> <span class="toc-text">HTTPS协议详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tomcat配置"><span class="toc-number">2.</span> <span class="toc-text">tomcat配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#windows环境"><span class="toc-number">2.1.</span> <span class="toc-text">windows环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux环境"><span class="toc-number">2.2.</span> <span class="toc-text">linux环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.3.</span> <span class="toc-text">测试效果</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>其实生活就是一场雨，<br>有伞就能平安度过，<br>没有伞，就会被雨淋成落汤鸡。<br>朋友，你有伞吗？</p>
-<p><img src="/img/life/life1.png" alt=""><br>或许没有伞的人居多，<br>因为没伞，被雨淋得稀里哗啦。<br>每个人都想有一把伞，<br>在生活中遮风避雨。<br>可伞在哪里？</p>
-<p><img src="/img/life/life2.png" alt=""><br>若别人能够给予，<br>当然心怀感恩、一路同行。<br>若无人给予，<br>不妨自己造一把伞，<br>撑自己的伞，风雨无阻。</p>
-<p><img src="/img/life/life4.png" alt=""><br>生活如雨，有伞就好！<br>不管是自己撑起的，还是别人给的。</p>
-<p><img src="/img/life/life5.png" alt=""><br>生活如雨，有伞就好！<br>要学会自己制造伞，<br>让自己在风雨中行走，在大浪中激闯！</p>
-<p><img src="/img/life/life6.png" alt=""><br>生活如雨，有伞就好！<br>记得，没有伞也不要怕，<br>别人能趟过去，自己也可以过去。</p>
+		<blockquote>
+<p>当遇到支付等安全性要求较高的情况时需要使用https协议，在此记录一下配置方式，方便以后查看，也希望能帮到其他朋友。</p>
+</blockquote>
+<h2 id="HTTPS协议详解"><a href="#HTTPS协议详解" class="headerlink" title="HTTPS协议详解"></a>HTTPS协议详解</h2><p>  <strong>HTTPS是HTTP的安全版，其与http的主要区别如下：</strong>
+　　</p>
+<ol>
+<li><p>https协议需要到ca申请证书，一般免费证书很少，需要交费。</p>
+</li>
+<li><p>http是超文本传输协议，信息是明文传输，https 则是具有安全性的ssl加密传输协议。</p>
+</li>
+<li><p>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</p>
+</li>
+<li><p>http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+</li>
+</ol>
+<h2 id="tomcat配置"><a href="#tomcat配置" class="headerlink" title="tomcat配置"></a>tomcat配置</h2><h3 id="windows环境"><a href="#windows环境" class="headerlink" title="windows环境"></a>windows环境</h3><p><strong>注：下文中“d:\tbb.keystore，d:\tbb.cer”为证书文件路径，没有会自动创建，路径可自行更改；“yourPassword”为密码</strong></p>
+<ol>
+<li><p>创建证书keystore<br>在命令行窗口中输入以下命令： <code>keytool -genkey -alias tbb -keyalg RSA -keystore d:\tbb.keystore</code><br>根据提示输入信息：<br><img src="/img/imgs/https1.jpg" alt=""><br>注：名字和姓氏要输入本机ip，国家、地区代码：cn</p>
+</li>
+<li><p>创建自签名的证书<br>在命令行窗口中输入以下命令：<code>keytool -selfcert -alias tbb -keystore d:\tbb.keystore</code></p>
+</li>
+<li><p>导出证书：<br><code>keytool -export -alias tbb -keystore d:\tbb.keystore -storepass yourPassword</code><br><code>-rfc -file d:\tbb.cer</code></p>
+</li>
+<li><p>双击打开d:\tbb.cer，将证书安装在“受信任的根证书颁发机构”区域中（也可以配置好之后从浏览器导入）<br><img src="/img/imgs/https2.jpg" alt=""><br><img src="/img/imgs/https3.jpg" alt=""><br><img src="/img/imgs/https4.jpg" alt=""></p>
+</li>
+<li><p>tomcat配置，打开conf/server.xml,加入如下配置：<br>tomcat6：<br><code>&lt; Connector port=&quot;443&quot; protocol=&quot;HTTP/1.1&quot; SSLEnabled=&quot;true&quot; maxThreads=&quot;150&quot;</code> <code>scheme=&quot;https&quot; secure=&quot;true&quot; keystoreFile=&quot;d:\tbb.keystore&quot;</code>  <code>keystorePass=&quot;yourPassword&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot; /&gt;</code><br>Tomcat7：<br><code>&lt; Connector port=&quot;8443&quot; protocol=&quot;org.apache.coyote.http11.Http11Protocol&quot;</code> <code>SSLEnabled=&quot;true&quot; maxThreads=&quot;150&quot; scheme=&quot;https&quot; secure=&quot;true&quot; keystoreFile=&quot;d:</code><br><code>\tbb.keystore&quot; keystorePass=&quot;yourPassword&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot; /&gt;</code></p>
+</li>
+</ol>
+<h3 id="linux环境"><a href="#linux环境" class="headerlink" title="linux环境"></a>linux环境</h3><ol>
+<li>创建证书keystore，执行下面的命令，按提示输入信息<br><code>keytool -genkey -alias tomcat -keyalg RSA -keystore /root/tomcat/apache-tomcat-8.0.35/conf/.keystore</code></li>
+<li>修改tomcat的conf/server.xml文件<br><code>&lt;Connector port=&quot;8443&quot; protocol=&quot;HTTP/1.1&quot; SSLEnabled=&quot;true&quot; maxThreads=&quot;150&quot; scheme=&quot;https&quot;</code><br><code>secure=&quot;true&quot; clientAuth=&quot;false&quot; keystoreFile=&quot;/root/tomcat/apache-tomcat-8.0.35/</code><br><code>conf/.keystore&quot; keystorePass=&quot;yourpassword&quot;  sslProtocol=&quot;TLS&quot; /&gt;</code></li>
+</ol>
+<h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><p>此配置是自己生成ssl证书，不被浏览器信任（具体表现https前面有个X）：<br><img src="/img/imgs/https5.jpg" alt=""></p>
   
 	 <div style="float:right;font-size:12px;">本文总阅读量 <span id="busuanzi_value_page_pv"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 	</div>
@@ -141,13 +172,13 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/美文/">美文</a>
+  <span></span> <a href="/tags/https/">https</a><a href="/tags/tomcat/">tomcat</a>
   </div>
 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/life/">生活</a>►<a class="article-category-link" href="/categories/life/essay/">美文</a>
+  <a class="article-category-link" href="/categories/develop/">技术</a>►<a class="article-category-link" href="/categories/develop/https/">https</a>►<a class="article-category-link" href="/categories/develop/https/tomcat/">tomcat</a>
 </div>
 
 
@@ -155,7 +186,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://chenxiaoqiong.me/2016-11-04/life/" data-title="生活如雨，有伞就好！ | ChenXiaoqiong" data-tsina="null" class="share clearfix">
+  <div data-url="http://chenxiaoqiong.me/2016-11-25/https/" data-title="tomcat配置https协议访问 | ChenXiaoqiong" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -164,19 +195,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016-11-25/https/" title="tomcat配置https协议访问">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  tomcat配置https协议访问</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2016-11-03/idea/"  title="idea(IntelliJ IDEA)快捷键">
+<a href="/2016-11-04/life/"  title="生活如雨，有伞就好！">
  <strong>NEXT:</strong><br/> 
- <span>idea(IntelliJ IDEA)快捷键
+ <span>生活如雨，有伞就好！
 </span>
 </a>
 </div>
@@ -186,7 +209,7 @@
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="生活如雨，有伞就好！" data-thread-key="life" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.me/post/life"></div>
+	<div class="ds-thread" data-title="tomcat配置https协议访问" data-thread-key="https" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.me/post/https"></div>
 	
 </section>
 
@@ -197,7 +220,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">Contents</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS协议详解"><span class="toc-number">1.</span> <span class="toc-text">HTTPS协议详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tomcat配置"><span class="toc-number">2.</span> <span class="toc-text">tomcat配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#windows环境"><span class="toc-number">2.1.</span> <span class="toc-text">windows环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux环境"><span class="toc-number">2.2.</span> <span class="toc-text">linux环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.3.</span> <span class="toc-text">测试效果</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
