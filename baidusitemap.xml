@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://chenxiaoqiong.me/2016-11-25/https/</loc>
-    <lastmod>2016-11-25T09:58:36.092Z</lastmod>
+    <lastmod>2016-11-25T10:01:36.239Z</lastmod>
     <data>
         <display>
         <title>tomcat配置https协议访问</title>
@@ -22,9 +22,6 @@
           
              
               <breadCrumb title="https" url="http://chenxiaoqiong.me/categories/develop/https/"/>
-          
-             
-              <breadCrumb title="tomcat" url="http://chenxiaoqiong.me/categories/develop/https/tomcat/"/>
           
         </display>
     </data>

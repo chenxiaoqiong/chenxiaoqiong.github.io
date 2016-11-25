@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenxiaoqiong.me/"/>
-  <updated>2016-11-25T09:58:36.092Z</updated>
+  <updated>2016-11-25T10:01:36.239Z</updated>
   <id>http://chenxiaoqiong.me/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://chenxiaoqiong.me/2016-11-25/https/"/>
     <id>http://chenxiaoqiong.me/2016-11-25/https/</id>
     <published>2016-11-25T08:34:53.000Z</published>
-    <updated>2016-11-25T09:58:36.092Z</updated>
+    <updated>2016-11-25T10:01:36.239Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>当遇到支付等安全性要求较高的情况时需要使用https协议，在此记录一下配置方式，方便以后查看，也希望能帮到其他朋友。</p>
@@ -69,8 +69,6 @@
       <category term="技术" scheme="http://chenxiaoqiong.me/categories/develop/"/>
     
       <category term="https" scheme="http://chenxiaoqiong.me/categories/develop/https/"/>
-    
-      <category term="tomcat" scheme="http://chenxiaoqiong.me/categories/develop/https/tomcat/"/>
     
     
       <category term="https" scheme="http://chenxiaoqiong.me/tags/https/"/>
