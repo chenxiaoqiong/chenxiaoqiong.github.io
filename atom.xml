@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenxiaoqiong.me/"/>
-  <updated>2016-11-28T03:35:44.523Z</updated>
+  <updated>2016-12-29T12:39:32.468Z</updated>
   <id>http://chenxiaoqiong.me/</id>
   
   <author>
@@ -14,6 +14,121 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>logback配置详解</title>
+    <link href="http://chenxiaoqiong.me/2016-12-29/logback/"/>
+    <id>http://chenxiaoqiong.me/2016-12-29/logback/</id>
+    <published>2016-12-29T09:47:05.000Z</published>
+    <updated>2016-12-29T12:39:32.468Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>最近公司项目进行了重构，日志管理从Log4j迁移到了LogBack。 Logback是由log4j创始人Ceki Gülcü为取代log4j而设计的又一个开源日志组件。无论从设计上还是实现上，Logback相对log4j而言有了相对多的改进：<a href="http://www.oschina.net/translate/reasons-to-prefer-logbak-over-log4j。" target="_blank" rel="external">http://www.oschina.net/translate/reasons-to-prefer-logbak-over-log4j。</a></p>
+</blockquote>
+<h2 id="logback配置详解"><a href="#logback配置详解" class="headerlink" title="logback配置详解"></a>logback配置详解</h2><h3 id="日志级别"><a href="#日志级别" class="headerlink" title="日志级别"></a>日志级别</h3><ol>
+<li>DEBUG：指出细粒度信息事件对调试应用程序是非常有帮助的；</li>
+<li>INFO：消息在粗粒度级别上突出强调应用程序的运行过程；</li>
+<li>WARN：会出现潜在错误的情形；</li>
+<li>ERROR：指出虽然发生错误事件，但仍然不影响系统的继续运行；</li>
+<li>FATAL：指出每个严重的错误事件将会导致应用程序的退出；</li>
+<li>另外，还有两个可用的特别的日志记录级别:<br>ALL:用于打开所有日志记录；<br>OFF:用于关闭所有日志记录。<br><strong><em>优先级从高到低分别是 ERROR、WARN、INFO、DEBUG。通过定义的级别，您可以控制到应用程序中相应级别的日志信息的开关。程序会打印高于或等于所设置级别的日志，设置的日志等级越高，打印出来的日志就越少。如果设置级别为INFO，则优先级高于等于INFO级别（如：INFO、 WARN、ERROR）的日志信息将可以被输出,小于该级别的如DEBUG将不会被输出。</em></strong></li>
+</ol>
+<h3 id="基本配置及解释"><a href="#基本配置及解释" class="headerlink" title="基本配置及解释"></a>基本配置及解释</h3><h4 id="基本配置文件"><a href="#基本配置文件" class="headerlink" title="基本配置文件"></a>基本配置文件</h4><pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;configuration&gt;
+    &lt;property name=&quot;log.charset.encoding&quot; value=&quot;UTF-8&quot;/&gt;
+    &lt;property name=&quot;LOG_HOME&quot; value=&quot;log&quot; /&gt;
+    &lt;!-- 控制台输出 --&gt;
+    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
+        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;
+        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;
+            &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+            &lt;/pattern&gt;
+        &lt;/layout&gt;
+    &lt;/appender&gt;
+
+    &lt;!-- 按照每天生成日志文件 --&gt;
+    &lt;appender name=&quot;FILE&quot;
+              class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+            &lt;FileNamePattern&gt;${LOG_HOME}/myApp.log.%d{yyyy-MM-dd}.log&lt;/FileNamePattern&gt;
+            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;
+        &lt;/rollingPolicy&gt;
+        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;
+            &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+            &lt;/pattern&gt;
+        &lt;/layout&gt;
+    &lt;/appender&gt;
+
+    &lt;!-- 按照每天生成错误日志文件 --&gt;
+    &lt;appender name=&quot;FILE-ERROR&quot;
+              class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
+        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;
+        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
+            &lt;FileNamePattern&gt;${LOG_HOME}/myApp.log_error.%d{yyyy-MM-dd}.log&lt;/FileNamePattern&gt;
+            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;
+        &lt;/rollingPolicy&gt;
+        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;
+            &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
+            &lt;/pattern&gt;
+        &lt;/layout&gt;
+        &lt;!-- 下面为配置只输出error级别的日志 --&gt;
+        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
+            &lt;level&gt;ERROR&lt;/level&gt;
+            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
+            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
+        &lt;/filter&gt;
+    &lt;/appender&gt;
+
+    &lt;!-- 设置具体一个类日志的日志打印 --&gt;
+    &lt;loger name=&quot;com.candy.controller.TestController&quot; level=&quot;INFO&quot; activity=&quot;false&quot;&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;
+        &lt;appender-ref ref=&quot;FILE&quot;/&gt;
+    &lt;/loger&gt;
+
+    &lt;root level=&quot;DEBUG&quot;&gt;
+        &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
+        &lt;appender-ref ref=&quot;FILE&quot; /&gt;
+    &lt;/root&gt;
+&lt;/configuration&gt;
+</code></pre><h4 id="配置文件节点详解"><a href="#配置文件节点详解" class="headerlink" title="配置文件节点详解"></a>配置文件节点详解</h4><ul>
+<li><p>设置变量： &lt; property &gt;<br>用来定义变量值的标签，<property> 有两个属性，name和value；其中name的值是变量的名称，value的值时变量定义的值。通过<property>定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。</property></property></p>
+</li>
+<li><p>设置loger：&lt; loger &gt;<br>用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。<loger>仅有一个name属性，一个可选的level和一个可选的addtivity属性。<br>name:<br>用来指定受此loger约束的某一个包或者具体的某一个类。<br>level:<br>用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特殊值INHERITED或者同义词NULL，代表强制执行上级的级别。<br>如果未设置此属性，那么当前loger将会继承上级的级别。<br>addtivity:<br>是否向上级loger传递打印信息。默认是true。<br>&lt; loger &gt;可以包含零个或多个&lt; appender-ref &gt;元素，标识这个appender将会添加到这个loger。</loger></appender></p>
+</li>
+<li><p>设置root:&lt; root &gt;<br>也是<loger>元素，但是它是根loger。只有一个level属性，应为已经被命名为”root”.<br>level:<br>用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，不能设置为INHERITED或者同义词NULL。<br>默认是DEBUG。<br><root>可以包含零个或多个<appender-ref>元素，标识这个appender将会添加到这个loger。</appender-ref></root></loger></p>
+<h3 id="过滤器filter"><a href="#过滤器filter" class="headerlink" title="过滤器filter"></a>过滤器filter</h3></li>
+<li><p>过滤器的返回值只能是ACCEPT、DENY和NEUTRAL的其中一个<br>DENY：记录事件立即被抛弃，不再经过剩余过滤器；<br>NEUTRAL：有序列表里的下一个过滤器会接着处理记录事件；<br>ACCEPT：那么记录事件被立即处理，不再经过剩余过滤器。<br>过滤器被添加到<appender>中，为<appender>添加一个或多个过滤器后，可以用任意条件对日志进行过滤。<appender> 有多个过滤器时，按照配置顺序执行。</appender></appender></appender></p>
+</li>
+</ul>
+<ul>
+<li>常用的过滤器：</li>
+</ul>
+<ol>
+<li>LevelFilter： 级别过滤器，根据日志级别进行过滤。如果日志级别等于配置级别，过滤器会根据onMath 和 onMismatch接收或拒绝日志。有以下子节点：<br>&lt; level &gt;:设置过滤级别<br>&lt; onMatch &gt;:用于配置符合过滤条件的操作<br>&lt; onMismatch &gt;:用于配置不符合过滤条件的操作</li>
+<li>ThresholdFilter： 临界值过滤器，过滤掉低于指定临界值的日志。当日志级别等于或高于临界值时，过滤器返回NEUTRAL；当日志级别低于临界值时，日志会被拒绝。</li>
+<li>EvaluatorFilter： 求值过滤器，评估、鉴别日志是否符合指定条件。</li>
+</ol>
+<p>此篇文章只是自己做了一下总结，还有诸多不足，还请大家指正！</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近公司项目进行了重构，日志管理从Log4j迁移到了LogBack。 Logback是由log4j创始人Ceki Gülcü为取代log4j而设计的又一个开源日志组件。无论从设计上还是实现上，Logback相对log4j而言有了相对多的改进：&lt;a 
+    
+    </summary>
+    
+      <category term="技术" scheme="http://chenxiaoqiong.me/categories/develop/"/>
+    
+      <category term="logback" scheme="http://chenxiaoqiong.me/categories/develop/logback/"/>
+    
+    
+      <category term="日志配置" scheme="http://chenxiaoqiong.me/tags/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE/"/>
+    
+      <category term="logback" scheme="http://chenxiaoqiong.me/tags/logback/"/>
+    
+  </entry>
   
   <entry>
     <title>tomcat配置https协议</title>

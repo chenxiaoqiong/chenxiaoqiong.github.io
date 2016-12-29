@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://chenxiaoqiong.me/2016-12-29/logback/</loc>
+    <lastmod>2016-12-29T12:39:32.468Z</lastmod>
+    <data>
+        <display>
+        <title>logback配置详解</title>
+        <pubTime>2016-12-29T09:47:05.000Z</pubTime>
+        
+        <tag>日志配置</tag>
+         
+        <tag>logback</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
+          
+             
+              <breadCrumb title="logback" url="http://chenxiaoqiong.me/categories/develop/logback/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chenxiaoqiong.me/2016-11-25/https/</loc>
     <lastmod>2016-11-28T03:35:44.523Z</lastmod>
     <data>
