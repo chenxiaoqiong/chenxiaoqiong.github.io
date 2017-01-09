@@ -17,8 +17,8 @@
   
   <entry>
     <title>logback配置详解</title>
-    <link href="http://chenxiaoqiong.me/2016-12-29/logback/"/>
-    <id>http://chenxiaoqiong.me/2016-12-29/logback/</id>
+    <link href="http://chenxiaoqiong.me/articles/logback/"/>
+    <id>http://chenxiaoqiong.me/articles/logback/</id>
     <published>2016-12-29T09:47:05.000Z</published>
     <updated>2016-12-29T12:39:32.468Z</updated>
     
@@ -132,8 +132,8 @@
   
   <entry>
     <title>tomcat配置https协议</title>
-    <link href="http://chenxiaoqiong.me/2016-11-25/https/"/>
-    <id>http://chenxiaoqiong.me/2016-11-25/https/</id>
+    <link href="http://chenxiaoqiong.me/articles/https/"/>
+    <id>http://chenxiaoqiong.me/articles/https/</id>
     <published>2016-11-25T08:34:53.000Z</published>
     <updated>2016-11-28T03:35:44.523Z</updated>
     
@@ -194,8 +194,8 @@
   
   <entry>
     <title>生活如雨，有伞就好！</title>
-    <link href="http://chenxiaoqiong.me/2016-11-04/life/"/>
-    <id>http://chenxiaoqiong.me/2016-11-04/life/</id>
+    <link href="http://chenxiaoqiong.me/articles/life/"/>
+    <id>http://chenxiaoqiong.me/articles/life/</id>
     <published>2016-11-04T07:02:03.000Z</published>
     <updated>2016-11-04T08:26:34.547Z</updated>
     
@@ -225,8 +225,8 @@
   
   <entry>
     <title>idea(IntelliJ IDEA)快捷键</title>
-    <link href="http://chenxiaoqiong.me/2016-11-03/idea/"/>
-    <id>http://chenxiaoqiong.me/2016-11-03/idea/</id>
+    <link href="http://chenxiaoqiong.me/articles/idea/"/>
+    <id>http://chenxiaoqiong.me/articles/idea/</id>
     <published>2016-11-03T02:09:23.000Z</published>
     <updated>2016-11-03T06:37:23.175Z</updated>
     
@@ -256,8 +256,8 @@
   
   <entry>
     <title>Nginx安装与配置</title>
-    <link href="http://chenxiaoqiong.me/2016-10-17/nginx/"/>
-    <id>http://chenxiaoqiong.me/2016-10-17/nginx/</id>
+    <link href="http://chenxiaoqiong.me/articles/nginx/"/>
+    <id>http://chenxiaoqiong.me/articles/nginx/</id>
     <published>2016-10-17T09:04:27.000Z</published>
     <updated>2016-11-03T06:34:28.927Z</updated>
     
@@ -339,8 +339,8 @@ expires      30d;
   
   <entry>
     <title>Hello World</title>
-    <link href="http://chenxiaoqiong.me/2016-10-14/hello-world/"/>
-    <id>http://chenxiaoqiong.me/2016-10-14/hello-world/</id>
+    <link href="http://chenxiaoqiong.me/articles/hello-world/"/>
+    <id>http://chenxiaoqiong.me/articles/hello-world/</id>
     <published>2016-10-14T07:02:22.994Z</published>
     <updated>2016-11-01T09:38:06.086Z</updated>
     

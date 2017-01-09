@@ -7,12 +7,19 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>Hello World | ChenXiaoqiong</title>
+    <title>Nginx安装与配置 | ChenXiaoqiong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="ChenXiaoqiong">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="安装步骤安装pcre
+获取pcre编译安装包，在http://www.pcre.org/ 上可以获取当前最新的版本
+解压缩pcre-xx.tar.gz包。
+进入解压缩目录，执行./configure。
+make &amp;amp; make install
+
+
+ 可能发生错误    make: ***No ">
     
     
     
@@ -70,7 +77,7 @@
 				<h1 class="site-name"><a href="/" title="ChenXiaoqiong">ChenXiaoqiong</a></h1>
 				<a class="blog-motto">爱编程，爱学习，爱挑战！程序媛就是我，我就是陈小琼 ^_^</a>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -105,15 +112,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016-10-14/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/articles/nginx/" title="Nginx安装与配置" itemprop="url">Nginx安装与配置</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://chenxiaoqiong.me" title="ChenXiaoqiong">ChenXiaoqiong</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-10-14T07:02:22.994Z" itemprop="datePublished">2016-10-14</time>
-    Updated:<time datetime="2016-11-01T09:38:06.086Z" itemprop="dateModified">2016-11-01</time>
+    <time datetime="2016-10-17T09:04:27.000Z" itemprop="datePublished">2016-10-17</time>
+    更新日期:<time datetime="2016-11-03T06:34:28.927Z" itemprop="dateModified">2016-11-03</time>
     
   </p>
 </header>
@@ -121,19 +128,69 @@
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+			<strong class="toc-title">文章目錄</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pcre"><span class="toc-number">1.1.</span> <span class="toc-text">安装pcre</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装openssl"><span class="toc-number">1.2.</span> <span class="toc-text">安装openssl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装zlib"><span class="toc-number">1.3.</span> <span class="toc-text">安装zlib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nginx"><span class="toc-number">1.4.</span> <span class="toc-text">安装nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">2.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx启动与重启"><span class="toc-number">2.1.</span> <span class="toc-text">nginx启动与重启</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.2.</span> <span class="toc-text">测试效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#负载均衡的4种配置方式"><span class="toc-number">3.1.</span> <span class="toc-text">负载均衡的4种配置方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源配置"><span class="toc-number">3.2.</span> <span class="toc-text">静态资源配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关链接："><span class="toc-number">4.</span> <span class="toc-text">相关链接：</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="安装pcre"><a href="#安装pcre" class="headerlink" title="安装pcre"></a>安装pcre</h3><ol>
+<li>获取pcre编译安装包，在<a href="http://www.pcre.org/" target="_blank" rel="external">http://www.pcre.org/</a> 上可以获取当前最新的版本</li>
+<li>解压缩pcre-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure。</li>
+<li>make &amp; make install</li>
+</ol>
+<blockquote>
+<p> <code>可能发生错误</code><br>    <code>make: ***No targets specified and no makefile found. Stop.</code><br>    <code>解决方法</code><br>    <code>./configure -prefix=/usr/local -with-shared-without-debug</code><br>    <code>make</code><br>    <code>make install</code></p>
+</blockquote>
+<h3 id="安装openssl"><a href="#安装openssl" class="headerlink" title="安装openssl"></a>安装openssl</h3><ol>
+<li>获取openssl编译安装包，在<a href="http://www.openssl.org/source/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.openssl.org/source/上可以获取当前最新的版本。</a></li>
+<li>解压缩openssl-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./config。</li>
+<li>make &amp; make install</li>
+</ol>
+<h3 id="安装zlib"><a href="#安装zlib" class="headerlink" title="安装zlib"></a>安装zlib</h3><ol>
+<li>获取zlib编译安装包，在<a href="http://www.zlib.net/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.zlib.net/上可以获取当前最新的版本。</a></li>
+<li>解压缩openssl-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure。</li>
+<li>make &amp; make install</li>
+</ol>
+<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><ol>
+<li>获取nginx，在<a href="http://nginx.org/en/download.html上可以获取当前最新的版本。" target="_blank" rel="external">http://nginx.org/en/download.html上可以获取当前最新的版本。</a></li>
+<li>解压缩nginx-xx.tar.gz包。</li>
+<li>进入解压缩目录，执行./configure</li>
+<li>make &amp; make install</li>
+</ol>
+<blockquote>
+<p><code>可能出现错误：</code><br>    <code>make: *** No rule to make target &#39;build&#39;, needed by &#39;default&#39;.  Stop.</code><br>    <code>解决办法：</code><br>    <code>./configure  --sbin-path=/usr/local/nginx/nginx-1.11.3/nginx\</code><br>    <code>--pid-path=/usr/local/nginx/nginx-1.11.3/nginx.pid\</code><br>    <code>--with-http_ssl_module\</code><br>    <code>//指定依赖路径</code><br>    <code>--with-pcre=/usr/local/nginx/pcre-8.36 \</code><br>    <code>--with-zlib=/usr/local/nginx/zlib-1.2.8 \</code><br>    <code>--with-openssl=/usr/local/nginx/openssl-1.0.1h</code></p>
+</blockquote>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="nginx启动与重启"><a href="#nginx启动与重启" class="headerlink" title="nginx启动与重启"></a>nginx启动与重启</h3><blockquote>
+<pre><code>cd usr/local/nginx/sbin
+./nginx
+如果无法启动执行命令：
+ln -s /usr/local/lib/libpcre.so.1 /lib64
+重启：
+./nginx –s reload
+</code></pre></blockquote>
+<h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><p>启动之后打开浏览器输入localhost，出现如下页面，恭喜你安装成功！<br><img src="/img/imgs/nginx.jpg" alt=""></p>
+<p>更详细可参考：<a href="http://www.cnblogs.com/jianxie/p/3990377.html" target="_blank" rel="external">http://www.cnblogs.com/jianxie/p/3990377.html</a></p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="负载均衡的4种配置方式"><a href="#负载均衡的4种配置方式" class="headerlink" title="负载均衡的4种配置方式"></a>负载均衡的4种配置方式</h3><ul>
+<li><p>轮询（默认）<br> 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 </p>
+</li>
+<li><p>weight<br> 指定轮询几率，weight和访问比率成正比，用于后端服务器性能不均的情况。 </p>
+</li>
+<li><p>ip_hash<br> 每个请求按访问ip的hash结果分配，这样每个访客固定访问一个后端服务器，可以解决session的问题。  </p>
+</li>
+<li><p>第三方<br> fair（按后端服务器的响应时间来分配请求，响应时间短的优先分配。）<br> url_hash</p>
+</li>
+</ul>
+<p>更详细可参考：<br><a href="http://www.linuxidc.com/Linux/2015-03/115207.htm" target="_blank" rel="external">http://www.linuxidc.com/Linux/2015-03/115207.htm</a><br><a href="http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html" target="_blank" rel="external">http://www.cnblogs.com/xiaogangqq123/archive/2011/03/04/1971002.html</a><br><a href="http://www.php100.com/html/program/nginx/2013/0905/5525.html" target="_blank" rel="external">http://www.php100.com/html/program/nginx/2013/0905/5525.html</a></p>
+<h3 id="静态资源配置"><a href="#静态资源配置" class="headerlink" title="静态资源配置"></a>静态资源配置</h3><blockquote>
+<pre><code>location ~* \.(gif|jpg|jpeg|png|bmp|swf|css|js|html)$ {
+root         /usr/local/nginx/nginx-1.11.3/html;   #在此目录下放项目同名文件夹静态资源
+expires      30d;
+}
+</code></pre></blockquote>
+<hr>
+<h2 id="相关链接："><a href="#相关链接：" class="headerlink" title="相关链接："></a>相关链接：</h2><p><a href="http://www.cnblogs.com/skynet/p/4146083.html（吴秦）" target="_blank" rel="external">http://www.cnblogs.com/skynet/p/4146083.html（吴秦）</a><br><a href="http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html" target="_blank" rel="external">http://www.cnblogs.com/zhuhongbao/archive/2013/06/04/3118061.html</a></p>
   
 	 <div style="float:right;font-size:12px;">本文总阅读量 <span id="busuanzi_value_page_pv"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 	</div>
@@ -141,15 +198,21 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/nginx/">nginx</a>
   </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/develop/">技术</a>►<a class="article-category-link" href="/categories/develop/nginx/">nginx</a>
+</div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://chenxiaoqiong.me/2016-10-14/hello-world/" data-title="Hello World | ChenXiaoqiong" data-tsina="null" class="share clearfix">
+  <div data-url="http://chenxiaoqiong.me/articles/nginx/" data-title="Nginx安装与配置 | ChenXiaoqiong" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -159,35 +222,43 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2016-10-17/nginx/" title="Nginx安装与配置">
+ <a href="/articles/idea/" title="idea(IntelliJ IDEA)快捷键">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  Nginx安装与配置</span>
+  idea(IntelliJ IDEA)快捷键</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/articles/hello-world/"  title="Hello World">
+ <strong>NEXT:</strong><br/> 
+ <span>Hello World
+</span>
+</a>
+</div>
 
 </nav>
 
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="Hello World" data-thread-key="hello-world" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.me/post/hello-world"></div>
+	<div class="ds-thread" data-title="Nginx安装与配置" data-thread-key="nginx" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.me/post/nginx"></div>
 	
 </section>
 
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <strong class="toc-title">文章目錄</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装步骤"><span class="toc-number">1.</span> <span class="toc-text">安装步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装pcre"><span class="toc-number">1.1.</span> <span class="toc-text">安装pcre</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装openssl"><span class="toc-number">1.2.</span> <span class="toc-text">安装openssl</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装zlib"><span class="toc-number">1.3.</span> <span class="toc-text">安装zlib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装nginx"><span class="toc-number">1.4.</span> <span class="toc-text">安装nginx</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#测试"><span class="toc-number">2.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nginx启动与重启"><span class="toc-number">2.1.</span> <span class="toc-text">nginx启动与重启</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.2.</span> <span class="toc-text">测试效果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#负载均衡的4种配置方式"><span class="toc-number">3.1.</span> <span class="toc-text">负载均衡的4种配置方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#静态资源配置"><span class="toc-number">3.2.</span> <span class="toc-text">静态资源配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关链接："><span class="toc-number">4.</span> <span class="toc-text">相关链接：</span></a></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
 <aside class="clearfix">
 <div id="authorInfo">
 	
@@ -248,7 +319,7 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
 </div>
 
 </aside>
@@ -266,7 +337,7 @@
 
 <div id="footer" >
     
-            <p class="copyright"> © 2016 
+            <p class="copyright"> © 2017 
 		
 		<a href="http://chenxiaoqiong.me" target="_blank" title="ChenXiaoqiong">ChenXiaoqiong</a>
 		
