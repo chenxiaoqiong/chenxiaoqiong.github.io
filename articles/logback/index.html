@@ -70,7 +70,7 @@
 				<h1 class="site-name"><a href="/" title="ChenXiaoqiong">ChenXiaoqiong</a></h1>
 				<a class="blog-motto">爱编程，爱学习，爱挑战！程序媛就是我，我就是陈小琼 ^_^</a>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜單">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -113,7 +113,7 @@
     </p>
   <p class="article-time">
     <time datetime="2016-12-29T09:47:05.000Z" itemprop="datePublished">2016-12-29</time>
-    更新日期:<time datetime="2016-12-29T12:39:32.468Z" itemprop="dateModified">2016-12-29</time>
+    更新日期:<time datetime="2017-01-24T04:58:36.861Z" itemprop="dateModified">2017-01-24</time>
     
   </p>
 </header>
@@ -121,7 +121,7 @@
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目錄</strong>
+			<strong class="toc-title">文章目录</strong>
 		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#logback配置详解"><span class="toc-number">1.</span> <span class="toc-text">logback配置详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#日志级别"><span class="toc-number">1.1.</span> <span class="toc-text">日志级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本配置及解释"><span class="toc-number">1.2.</span> <span class="toc-text">基本配置及解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本配置文件"><span class="toc-number">1.2.1.</span> <span class="toc-text">基本配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置文件节点详解"><span class="toc-number">1.2.2.</span> <span class="toc-text">配置文件节点详解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器filter"><span class="toc-number">1.3.</span> <span class="toc-text">过滤器filter</span></a></li></ol></li></ol>
 		</div>
 		
@@ -136,65 +136,8 @@
 <li>FATAL：指出每个严重的错误事件将会导致应用程序的退出；</li>
 <li>另外，还有两个可用的特别的日志记录级别:<br>ALL:用于打开所有日志记录；<br>OFF:用于关闭所有日志记录。<br><strong><em>优先级从高到低分别是 ERROR、WARN、INFO、DEBUG。通过定义的级别，您可以控制到应用程序中相应级别的日志信息的开关。程序会打印高于或等于所设置级别的日志，设置的日志等级越高，打印出来的日志就越少。如果设置级别为INFO，则优先级高于等于INFO级别（如：INFO、 WARN、ERROR）的日志信息将可以被输出,小于该级别的如DEBUG将不会被输出。</em></strong></li>
 </ol>
-<h3 id="基本配置及解释"><a href="#基本配置及解释" class="headerlink" title="基本配置及解释"></a>基本配置及解释</h3><h4 id="基本配置文件"><a href="#基本配置文件" class="headerlink" title="基本配置文件"></a>基本配置文件</h4><pre><code>    &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;configuration&gt;
-    &lt;property name=&quot;log.charset.encoding&quot; value=&quot;UTF-8&quot;/&gt;
-    &lt;property name=&quot;LOG_HOME&quot; value=&quot;log&quot; /&gt;
-    &lt;!-- 控制台输出 --&gt;
-    &lt;appender name=&quot;STDOUT&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;
-        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;
-        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;
-            &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-            &lt;/pattern&gt;
-        &lt;/layout&gt;
-    &lt;/appender&gt;
-
-    &lt;!-- 按照每天生成日志文件 --&gt;
-    &lt;appender name=&quot;FILE&quot;
-              class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
-        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
-            &lt;FileNamePattern&gt;${LOG_HOME}/myApp.log.%d{yyyy-MM-dd}.log&lt;/FileNamePattern&gt;
-            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;
-        &lt;/rollingPolicy&gt;
-        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;
-            &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-            &lt;/pattern&gt;
-        &lt;/layout&gt;
-    &lt;/appender&gt;
-
-    &lt;!-- 按照每天生成错误日志文件 --&gt;
-    &lt;appender name=&quot;FILE-ERROR&quot;
-              class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;
-        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;
-        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;
-            &lt;FileNamePattern&gt;${LOG_HOME}/myApp.log_error.%d{yyyy-MM-dd}.log&lt;/FileNamePattern&gt;
-            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;
-        &lt;/rollingPolicy&gt;
-        &lt;layout class=&quot;ch.qos.logback.classic.PatternLayout&quot;&gt;
-            &lt;pattern&gt;%d{HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n
-            &lt;/pattern&gt;
-        &lt;/layout&gt;
-        &lt;!-- 下面为配置只输出error级别的日志 --&gt;
-        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;
-            &lt;level&gt;ERROR&lt;/level&gt;
-            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;
-            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;
-        &lt;/filter&gt;
-    &lt;/appender&gt;
-
-    &lt;!-- 设置具体一个类日志的日志打印 --&gt;
-    &lt;loger name=&quot;com.candy.controller.TestController&quot; level=&quot;INFO&quot; activity=&quot;false&quot;&gt;
-        &lt;appender-ref ref=&quot;STDOUT&quot;/&gt;
-        &lt;appender-ref ref=&quot;FILE&quot;/&gt;
-    &lt;/loger&gt;
-
-    &lt;root level=&quot;DEBUG&quot;&gt;
-        &lt;appender-ref ref=&quot;STDOUT&quot; /&gt;
-        &lt;appender-ref ref=&quot;FILE&quot; /&gt;
-    &lt;/root&gt;
-&lt;/configuration&gt;
-</code></pre><h4 id="配置文件节点详解"><a href="#配置文件节点详解" class="headerlink" title="配置文件节点详解"></a>配置文件节点详解</h4><ul>
+<h3 id="基本配置及解释"><a href="#基本配置及解释" class="headerlink" title="基本配置及解释"></a>基本配置及解释</h3><h4 id="基本配置文件"><a href="#基本配置文件" class="headerlink" title="基本配置文件"></a>基本配置文件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;configuration&gt;</div><div class="line">    &lt;property name=<span class="string">"log.charset.encoding"</span> value=<span class="string">"UTF-8"</span>/&gt;</div><div class="line">    &lt;property name=<span class="string">"LOG_HOME"</span> value=<span class="string">"log"</span> /&gt;</div><div class="line">    &lt;!-- 控制台输出 --&gt;</div><div class="line">    &lt;appender name=<span class="string">"STDOUT"</span> class=<span class="string">"ch.qos.logback.core.ConsoleAppender"</span>&gt;</div><div class="line">        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;</div><div class="line">        &lt;layout class=<span class="string">"ch.qos.logback.classic.PatternLayout"</span>&gt;</div><div class="line">            &lt;pattern&gt;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</div><div class="line">            &lt;/pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- 按照每天生成日志文件 --&gt;</div><div class="line">    &lt;appender name=<span class="string">"FILE"</span></div><div class="line">              class=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</div><div class="line">        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;</div><div class="line">        &lt;rollingPolicy class=<span class="string">"ch.qos.logback.core.rolling.TimeBasedRollingPolicy"</span>&gt;</div><div class="line">            &lt;FileNamePattern&gt;<span class="variable">$&#123;LOG_HOME&#125;</span>/myApp.log.%d&#123;yyyy-MM-dd&#125;.log&lt;/FileNamePattern&gt;</div><div class="line">            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;</div><div class="line">        &lt;/rollingPolicy&gt;</div><div class="line">        &lt;layout class=<span class="string">"ch.qos.logback.classic.PatternLayout"</span>&gt;</div><div class="line">            &lt;pattern&gt;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</div><div class="line">            &lt;/pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- 按照每天生成错误日志文件 --&gt;</div><div class="line">    &lt;appender name=<span class="string">"FILE-ERROR"</span></div><div class="line">              class=<span class="string">"ch.qos.logback.core.rolling.RollingFileAppender"</span>&gt;</div><div class="line">        &lt;Encoding&gt;UTF-8&lt;/Encoding&gt;</div><div class="line">        &lt;rollingPolicy class=<span class="string">"ch.qos.logback.core.rolling.TimeBasedRollingPolicy"</span>&gt;</div><div class="line">            &lt;FileNamePattern&gt;<span class="variable">$&#123;LOG_HOME&#125;</span>/myApp.log_error.%d&#123;yyyy-MM-dd&#125;.log&lt;/FileNamePattern&gt;</div><div class="line">            &lt;MaxHistory&gt;30&lt;/MaxHistory&gt;</div><div class="line">        &lt;/rollingPolicy&gt;</div><div class="line">        &lt;layout class=<span class="string">"ch.qos.logback.classic.PatternLayout"</span>&gt;</div><div class="line">            &lt;pattern&gt;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;50&#125; - %msg%n</div><div class="line">            &lt;/pattern&gt;</div><div class="line">        &lt;/layout&gt;</div><div class="line">        &lt;!-- 下面为配置只输出error级别的日志 --&gt;</div><div class="line">        &lt;filter class=<span class="string">"ch.qos.logback.classic.filter.LevelFilter"</span>&gt;</div><div class="line">            &lt;level&gt;ERROR&lt;/level&gt;</div><div class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</div><div class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</div><div class="line">        &lt;/filter&gt;</div><div class="line">    &lt;/appender&gt;</div><div class="line"></div><div class="line">    &lt;!-- 设置具体一个类日志的日志打印 --&gt;</div><div class="line">    &lt;loger name=<span class="string">"com.candy.controller.TestController"</span> level=<span class="string">"INFO"</span> activity=<span class="string">"false"</span>&gt;</div><div class="line">        &lt;appender-ref ref=<span class="string">"STDOUT"</span>/&gt;</div><div class="line">        &lt;appender-ref ref=<span class="string">"FILE"</span>/&gt;</div><div class="line">    &lt;/loger&gt;</div><div class="line"></div><div class="line">    &lt;root level=<span class="string">"DEBUG"</span>&gt;</div><div class="line">        &lt;appender-ref ref=<span class="string">"STDOUT"</span> /&gt;</div><div class="line">        &lt;appender-ref ref=<span class="string">"FILE"</span> /&gt;</div><div class="line">    &lt;/root&gt;</div><div class="line">&lt;/configuration&gt;</div></pre></td></tr></table></figure>
+<h4 id="配置文件节点详解"><a href="#配置文件节点详解" class="headerlink" title="配置文件节点详解"></a>配置文件节点详解</h4><ul>
 <li><p>设置变量： &lt; property &gt;<br>用来定义变量值的标签，<property> 有两个属性，name和value；其中name的值是变量的名称，value的值时变量定义的值。通过<property>定义的值会被插入到logger上下文中。定义变量后，可以使“${}”来使用变量。</property></property></p>
 </li>
 <li><p>设置loger：&lt; loger &gt;<br>用来设置某一个包或者具体的某一个类的日志打印级别、以及指定<appender>。<loger>仅有一个name属性，一个可选的level和一个可选的addtivity属性。<br>name:<br>用来指定受此loger约束的某一个包或者具体的某一个类。<br>level:<br>用来设置打印级别，大小写无关：TRACE, DEBUG, INFO, WARN, ERROR, ALL 和 OFF，还有一个特殊值INHERITED或者同义词NULL，代表强制执行上级的级别。<br>如果未设置此属性，那么当前loger将会继承上级的级别。<br>addtivity:<br>是否向上级loger传递打印信息。默认是true。<br>&lt; loger &gt;可以包含零个或多个&lt; appender-ref &gt;元素，标识这个appender将会添加到这个loger。</loger></appender></p>
@@ -264,15 +207,15 @@
 
 
 </div>  
-      <div class="openaside"><a class="navbutton" href="#" title="顯示側邊欄"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目錄</strong>
+  <strong class="toc-title">文章目录</strong>
   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#logback配置详解"><span class="toc-number">1.</span> <span class="toc-text">logback配置详解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#日志级别"><span class="toc-number">1.1.</span> <span class="toc-text">日志级别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本配置及解释"><span class="toc-number">1.2.</span> <span class="toc-text">基本配置及解释</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本配置文件"><span class="toc-number">1.2.1.</span> <span class="toc-text">基本配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置文件节点详解"><span class="toc-number">1.2.2.</span> <span class="toc-text">配置文件节点详解</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#过滤器filter"><span class="toc-number">1.3.</span> <span class="toc-text">过滤器filter</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隱藏側邊欄"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 <div id="authorInfo">
 	
@@ -333,7 +276,7 @@
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 訂閱</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>

@@ -4,8 +4,33 @@
 
     
   <url>
+    <loc>http://chenxiaoqiong.me/articles/https/</loc>
+    <lastmod>2017-01-24T05:04:20.067Z</lastmod>
+    <data>
+        <display>
+        <title>tomcat配置https协议</title>
+        <pubTime>2016-11-25T08:34:53.000Z</pubTime>
+        
+        <tag>https</tag>
+         
+        <tag>tomcat</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
+          
+             
+              <breadCrumb title="https" url="http://chenxiaoqiong.me/categories/develop/https/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chenxiaoqiong.me/articles/logback/</loc>
-    <lastmod>2016-12-29T12:39:32.468Z</lastmod>
+    <lastmod>2017-01-24T04:58:36.861Z</lastmod>
     <data>
         <display>
         <title>logback配置详解</title>
@@ -29,16 +54,14 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.me/articles/https/</loc>
-    <lastmod>2016-11-28T03:35:44.523Z</lastmod>
+    <loc>http://chenxiaoqiong.me/articles/nginx/</loc>
+    <lastmod>2017-01-24T04:57:09.814Z</lastmod>
     <data>
         <display>
-        <title>tomcat配置https协议</title>
-        <pubTime>2016-11-25T08:34:53.000Z</pubTime>
+        <title>Nginx安装与配置</title>
+        <pubTime>2016-10-17T09:04:27.000Z</pubTime>
         
-        <tag>https</tag>
-         
-        <tag>tomcat</tag>
+        <tag>nginx</tag>
          
          
            
@@ -46,7 +69,7 @@
               <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
           
              
-              <breadCrumb title="https" url="http://chenxiaoqiong.me/categories/develop/https/"/>
+              <breadCrumb title="nginx" url="http://chenxiaoqiong.me/categories/develop/nginx/"/>
           
         </display>
     </data>
@@ -95,29 +118,6 @@
           
              
               <breadCrumb title="IntelliJ IDEA" url="http://chenxiaoqiong.me/categories/develop/IntelliJ-IDEA/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenxiaoqiong.me/articles/nginx/</loc>
-    <lastmod>2016-11-03T06:34:28.927Z</lastmod>
-    <data>
-        <display>
-        <title>Nginx安装与配置</title>
-        <pubTime>2016-10-17T09:04:27.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
-          
-             
-              <breadCrumb title="nginx" url="http://chenxiaoqiong.me/categories/develop/nginx/"/>
           
         </display>
     </data>
