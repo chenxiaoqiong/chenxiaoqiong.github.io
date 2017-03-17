@@ -5,13 +5,17 @@
     
   <url>
     <loc>http://chenxiaoqiong.me/articles/mapreduce1/</loc>
-    <lastmod>2017-03-17T06:49:47.891Z</lastmod>
+    <lastmod>2017-03-17T07:09:47.189Z</lastmod>
     <data>
         <display>
         <title>MapReduce实例（一）</title>
         <pubTime>2017-03-16T09:04:00.000Z</pubTime>
         
-        <tag>Hadoop，MapReduce，大数据</tag>
+        <tag>Hadoop</tag>
+         
+        <tag>MapReduce</tag>
+         
+        <tag>大数据</tag>
          
          
            
