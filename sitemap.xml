@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chenxiaoqiong.me/articles/mapreduce1/</loc>
+    
+    <lastmod>2017-03-17T06:49:47.891Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://chenxiaoqiong.me/articles/nginx/</loc>
+    
+    <lastmod>2017-03-17T05:59:02.875Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chenxiaoqiong.me/articles/https/</loc>
     
     <lastmod>2017-01-24T05:04:20.067Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://chenxiaoqiong.me/articles/logback/</loc>
     
     <lastmod>2017-01-24T04:58:36.861Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chenxiaoqiong.me/articles/nginx/</loc>
-    
-    <lastmod>2017-01-24T04:57:09.814Z</lastmod>
     
   </url>
   

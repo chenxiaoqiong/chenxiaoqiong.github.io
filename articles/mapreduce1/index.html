@@ -7,12 +7,12 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
 <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>Hello World | ChenXiaoqiong</title>
+    <title>MapReduce实例（一） | ChenXiaoqiong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="ChenXiaoqiong">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="基本概念Hadoop:的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。MapReduce:是处理大量半结构化数据集合的编程模型。最简单的 MapReduce应用程序至少包含 3 个部分：一个 Map 函数、一个 Red">
     
     
     
@@ -105,15 +105,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/articles/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/articles/mapreduce1/" title="MapReduce实例（一）" itemprop="url">MapReduce实例（一）</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://chenxiaoqiong.me" title="ChenXiaoqiong">ChenXiaoqiong</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-10-14T07:02:22.994Z" itemprop="datePublished">2016-10-14</time>
-    更新日期:<time datetime="2016-11-01T09:38:06.086Z" itemprop="dateModified">2016-11-01</time>
+    <time datetime="2017-03-16T09:04:00.000Z" itemprop="datePublished">2017-03-16</time>
+    更新日期:<time datetime="2017-03-17T06:49:47.891Z" itemprop="dateModified">2017-03-17</time>
     
   </p>
 </header>
@@ -122,18 +122,110 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个有趣的例子"><span class="toc-number">2.</span> <span class="toc-text">一个有趣的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例需求"><span class="toc-number">3.</span> <span class="toc-text">实例需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">4.</span> <span class="toc-text">代码实现</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>Hadoop:</strong>的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。<br><strong>MapReduce:</strong>是处理大量半结构化数据集合的编程模型。最简单的 MapReduce应用程序至少包含 3 个部分：一个 Map 函数、一个 Reduce 函数和一个 main 函数。我的简单理解是map按照一定规则对输入做一系列的处理，reduce进行输出，输出前可能做一些操作，比如统计之类的。</p>
+<h2 id="一个有趣的例子"><a href="#一个有趣的例子" class="headerlink" title="一个有趣的例子"></a>一个有趣的例子</h2><p><img src="/img/imgs/mapreduce11.jpg" alt=""><br>你想数出一摞牌中有多少张黑桃。直观方式是一张一张检查并且数出有多少张是黑桃？<br>MapReduce方法则是：</p>
+<ol>
+<li>给在座的所有玩家中分配这摞牌</li>
+<li>让每个玩家数自己手中的牌有几张是黑桃，然后把这个数目汇报给你</li>
+<li>你把所有玩家告诉你的数字加起来，得到最后的结论</li>
+</ol>
+<h2 id="实例需求"><a href="#实例需求" class="headerlink" title="实例需求"></a>实例需求</h2><p>计算输入文件中的单词出现的次数。输入文件中的内容单词之间用空格隔开，要求输出文件中输出单词、空格、单词出现的次数。</p>
+<blockquote>
+<p>输入文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I am a pretty girl</div><div class="line">I am a programmer I am so proud</div></pre></td></tr></table></figure></p>
+<p>输出文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">I	3</div><div class="line">a	2</div><div class="line">am	3</div><div class="line">girl	1</div><div class="line">pretty	1</div><div class="line">programmer	1</div><div class="line">proud	1</div><div class="line">so	1</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码已上传至我的git：<a href="https://github.com/chenxiaoqiong/worldCountMapReduce" target="_blank" rel="external">https://github.com/chenxiaoqiong/worldCountMapReduce</a><br>主要代码：<br>     /**</p>
+<pre><code> * &lt;h1&gt; MapReduce实例（一） &lt;/h1&gt;
+ * WordCountMapReduce：计算每个单词出现的次数
+ * Created by chenxiaoqiong on 2017/3/01 0017 下午 2:14.
+ */
+public class WordCountMapReduce extends Configured implements Tool {
+
+/**
+ * map:处理输入文件，输出（单词 1）
+ */
+public static class WordCountMapper
+        extends Mapper&lt;LongWritable, Text, Text, IntWritable&gt; {
+
+    private final static IntWritable ints = new IntWritable(1);
+    private Text keyword = new Text();
+
+    @Override
+    protected void map(LongWritable key, Text value, Context context)
+            throws IOException, InterruptedException {
+        // TODO
+        String[] values = value.toString().split(&quot; &quot;);
+        for (String vs : values) {
+            keyword.set(vs);
+            context.write(keyword, ints);
+        }
+    }
+}
+
+/**
+ * reduce：统计map输出，输出（单词，count）
+ */
+public static class WordCountReducer
+        extends Reducer&lt;Text, IntWritable, Text, IntWritable&gt; {
+
+    private IntWritable inw = new IntWritable();
+
+    @Override
+    protected void reduce(Text key, Iterable&lt;IntWritable&gt; value, Context context)
+            throws IOException, InterruptedException {
+        int sum = 0;
+        for (IntWritable val : value) {
+            sum += val.get();
+        }
+        inw.set(sum);
+        context.write(key, inw);
+    }
+}
+
+public int run(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+    //获取配置文件：
+    Configuration conf = super.getConf();
+
+    //创建job：
+    Job job = Job.getInstance(conf, this.getClass().getSimpleName());
+    job.setJarByClass(WordCountMapReduce.class);
+
+    //配置作业：
+    // Input --&gt; Map --&gt; Reduce --&gt; Output
+    // Input:
+    Path inPath = new Path(args[0]);
+    FileInputFormat.addInputPath(job, inPath);
+    //FileInputFormat过程会将文件处理（Format）成 &lt;偏移量,每一行内容&gt; 的key value对。
+
+    //Map  设置Mapper类，设置Mapper类输出的Key、Value的类型：
+    job.setMapperClass(WordCountMapper.class);
+    job.setMapOutputKeyClass(Text.class);
+    job.setMapOutputValueClass(IntWritable.class);
+
+    //Reduce  设置Reducer类， 设置最终输出的 Key、Value的类型（setOutputKeyClass、setOutputValueClass）：
+    job.setReducerClass(WordCountReducer.class);
+    job.setOutputKeyClass(Text.class);
+    job.setOutputValueClass(IntWritable.class);
+
+    //Output 设置输出路径
+    Path outPath = new Path(args[1]);
+    FileOutputFormat.setOutputPath(job, outPath);
+
+    //提交任务
+    boolean isSucess = job.waitForCompletion(true);
+    return isSucess ? 1 : 0;     //成功返回1 ，失败返回0
+}
+
+public static void main(String[] args) throws Exception {
+    Configuration conf = new Configuration();
+    int status = ToolRunner.run(conf, new WordCountMapReduce(), args);
+    System.exit(status);
+}
+}
+</code></pre><p>pom.xml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;hadoop&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;countMapReduce&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">            &lt;id&gt;apache&lt;/id&gt;</div><div class="line">            &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">    &lt;/repositories&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-core&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;excludeTransitive&gt;<span class="literal">false</span>&lt;/excludeTransitive&gt;</div><div class="line">                    &lt;stripVersion&gt;<span class="literal">true</span>&lt;/stripVersion&gt;</div><div class="line">                    &lt;outputDirectory&gt;./lib&lt;/outputDirectory&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line"></div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
   
 	 <div style="float:right;font-size:12px;">本文总阅读量 <span id="busuanzi_value_page_pv"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
 	</div>
@@ -141,15 +233,21 @@
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/hexo/">hexo</a>
+  <span></span> <a href="/tags/Hadoop，MapReduce，大数据/">Hadoop，MapReduce，大数据</a>
   </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/develop/">技术</a>►<a class="article-category-link" href="/categories/develop/MapReduce/">MapReduce</a>
+</div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://chenxiaoqiong.me/articles/hello-world/" data-title="Hello World | ChenXiaoqiong" data-tsina="null" class="share clearfix">
+  <div data-url="http://chenxiaoqiong.me/articles/mapreduce1/" data-title="MapReduce实例（一） | ChenXiaoqiong" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -158,21 +256,21 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/articles/nginx/" title="Nginx安装与配置">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Nginx安装与配置</span>
+
+<div class="next">
+<a href="/articles/logback/"  title="logback配置详解">
+ <strong>NEXT:</strong><br/> 
+ <span>logback配置详解
+</span>
 </a>
 </div>
-
 
 </nav>
 
 	
 <section class="comment">
 	
-	<div class="ds-thread" data-title="Hello World" data-thread-key="hello-world" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.me/post/hello-world"></div>
+	<div class="ds-thread" data-title="MapReduce实例（一）" data-thread-key="mapreduce1" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.me/post/mapreduce1"></div>
 	
 </section>
 
@@ -183,7 +281,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本概念"><span class="toc-number">1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一个有趣的例子"><span class="toc-number">2.</span> <span class="toc-text">一个有趣的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#实例需求"><span class="toc-number">3.</span> <span class="toc-text">实例需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">4.</span> <span class="toc-text">代码实现</span></a></li></ol>
   </div>
 
 <div id="asidepart">

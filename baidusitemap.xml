@@ -4,6 +4,52 @@
 
     
   <url>
+    <loc>http://chenxiaoqiong.me/articles/mapreduce1/</loc>
+    <lastmod>2017-03-17T06:49:47.891Z</lastmod>
+    <data>
+        <display>
+        <title>MapReduce实例（一）</title>
+        <pubTime>2017-03-16T09:04:00.000Z</pubTime>
+        
+        <tag>Hadoop，MapReduce，大数据</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
+          
+             
+              <breadCrumb title="MapReduce" url="http://chenxiaoqiong.me/categories/develop/MapReduce/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenxiaoqiong.me/articles/nginx/</loc>
+    <lastmod>2017-03-17T05:59:02.875Z</lastmod>
+    <data>
+        <display>
+        <title>Nginx安装与配置</title>
+        <pubTime>2016-10-17T09:04:27.000Z</pubTime>
+        
+        <tag>nginx</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
+          
+             
+              <breadCrumb title="nginx" url="http://chenxiaoqiong.me/categories/develop/nginx/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://chenxiaoqiong.me/articles/https/</loc>
     <lastmod>2017-01-24T05:04:20.067Z</lastmod>
     <data>
@@ -47,29 +93,6 @@
           
              
               <breadCrumb title="logback" url="http://chenxiaoqiong.me/categories/develop/logback/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://chenxiaoqiong.me/articles/nginx/</loc>
-    <lastmod>2017-01-24T04:57:09.814Z</lastmod>
-    <data>
-        <display>
-        <title>Nginx安装与配置</title>
-        <pubTime>2016-10-17T09:04:27.000Z</pubTime>
-        
-        <tag>nginx</tag>
-         
-         
-           
-             
-              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
-          
-             
-              <breadCrumb title="nginx" url="http://chenxiaoqiong.me/categories/develop/nginx/"/>
           
         </display>
     </data>

@@ -2099,7 +2099,7 @@ footer {
 }
 .article-content pre,
 .article-content .highlight {
-  background: #1d1f21;
+  background: #444;
   margin: 0.5em 0;
   padding: 1em 2%;
   overflow: auto;
@@ -2161,7 +2161,7 @@ footer {
 }
 .article-content .gist {
   margin: 0.5em 0;
-  background: #1d1f21;
+  background: #444;
   padding: 1em 2%;
 }
 .article-content .gist .gist-file {
@@ -2187,7 +2187,7 @@ footer {
   border: none;
 }
 .article-content .gist .gist-file .gist-meta {
-  background: #1d1f21;
+  background: #444;
   color: #969896;
   font: 0.85em "Georgia", serif;
   padding: 0;
