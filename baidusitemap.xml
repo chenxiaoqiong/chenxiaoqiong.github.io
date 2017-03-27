@@ -5,17 +5,36 @@
     
   <url>
     <loc>http://chenxiaoqiong.me/articles/mapreduce1/</loc>
-    <lastmod>2017-03-17T07:09:47.189Z</lastmod>
+    <lastmod>2017-03-27T10:11:19.637Z</lastmod>
     <data>
         <display>
         <title>MapReduce实例（一）</title>
         <pubTime>2017-03-16T09:04:00.000Z</pubTime>
         
-        <tag>Hadoop</tag>
+        <tag>Hadoop，MapReduce，大数据</tag>
          
-        <tag>MapReduce</tag>
          
-        <tag>大数据</tag>
+           
+             
+              <breadCrumb title="技术" url="http://chenxiaoqiong.me/categories/develop/"/>
+          
+             
+              <breadCrumb title="MapReduce" url="http://chenxiaoqiong.me/categories/develop/MapReduce/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://chenxiaoqiong.me/articles/mapreduce2/</loc>
+    <lastmod>2017-03-27T10:09:17.809Z</lastmod>
+    <data>
+        <display>
+        <title>MapReduce实例（二）</title>
+        <pubTime>2017-03-16T09:04:00.000Z</pubTime>
+        
+        <tag>Hadoop，MapReduce，大数据</tag>
          
          
            
