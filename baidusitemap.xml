@@ -4,11 +4,11 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.me/articles/mapreduce1/</loc>
-    <lastmod>2017-03-27T10:11:19.637Z</lastmod>
+    <loc>http://chenxiaoqiong.me/articles/mapreduce2/</loc>
+    <lastmod>2017-03-27T10:20:26.594Z</lastmod>
     <data>
         <display>
-        <title>MapReduce实例（一）</title>
+        <title>MapReduce实例（二）</title>
         <pubTime>2017-03-16T09:04:00.000Z</pubTime>
         
         <tag>Hadoop，MapReduce，大数据</tag>
@@ -27,11 +27,11 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.me/articles/mapreduce2/</loc>
-    <lastmod>2017-03-27T10:09:17.809Z</lastmod>
+    <loc>http://chenxiaoqiong.me/articles/mapreduce1/</loc>
+    <lastmod>2017-03-27T10:11:19.637Z</lastmod>
     <data>
         <display>
-        <title>MapReduce实例（二）</title>
+        <title>MapReduce实例（一）</title>
         <pubTime>2017-03-16T09:04:00.000Z</pubTime>
         
         <tag>Hadoop，MapReduce，大数据</tag>
