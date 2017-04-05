@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chenxiaoqiong.me/articles/crontab/</loc>
+    
+    <lastmod>2017-04-05T07:20:23.121Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chenxiaoqiong.me/articles/mapreduce1/</loc>
     
     <lastmod>2017-04-05T02:39:11.246Z</lastmod>

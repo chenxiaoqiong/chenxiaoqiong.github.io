@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenxiaoqiong.me/"/>
-  <updated>2017-04-05T02:39:11.246Z</updated>
+  <updated>2017-04-05T07:20:23.121Z</updated>
   <id>http://chenxiaoqiong.me/</id>
   
   <author>
@@ -14,6 +14,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Linux Crontab 定时任务</title>
+    <link href="http://chenxiaoqiong.me/articles/crontab/"/>
+    <id>http://chenxiaoqiong.me/articles/crontab/</id>
+    <published>2017-04-05T03:04:00.000Z</published>
+    <updated>2017-04-05T07:20:23.121Z</updated>
+    
+    <content type="html"><![CDATA[<p>  作为菜鸟的我一直以为linux定时任务是一个很复杂的东西，近期自己要写了才知道原来这么简单。总结如下：<br><img src="/img/imgs/crontab1.png" alt=""></p>
+<h2 id="crontab命令"><a href="#crontab命令" class="headerlink" title="crontab命令"></a>crontab命令</h2><p>crontab -l //列出某个用户cron服务的详细内容<br>crontab -e //编辑某个用户的cron服务，相当于进入vi编辑模式<br>crontab -r //删除某个用户的cron服务<br>crontab -u //设定某个用户的cron服务，一般root用户在执行这个命令的时候需要此参数。比如说root查看自己的cron设置：crontab -u root -l</p>
+<h2 id="描述格式"><a href="#描述格式" class="headerlink" title="描述格式"></a>描述格式</h2><h3 id="格式说明"><a href="#格式说明" class="headerlink" title="格式说明"></a>格式说明</h3><pre><code># Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+</code></pre><p>除了上述数字还有几个个特殊的符号就是”<em>“、”/“和”-“、”,”，</em>代表所有的取值范围内的数字，”/“代表每的意思,”/5”表示每5个单位，”-“代表从某个数字到某个数字,”,”分开几个离散的数字。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><ul>
+<li><p>每天早上6点执行一次/root/scrīpts/backup.sh这个命令<br>0 6 * * * /root/scrīpts/backup.sh </p>
+</li>
+<li><p>每5分钟执行一次/root/scrīpts/backup.sh这个命令<br>*/5 * * * * /root/scrīpts/backup.sh  </p>
+</li>
+<li><p>每两个小时<br>0 */2 * * * command line</p>
+</li>
+<li><p>每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点<br>0 11 4 * 1-3 command line</p>
+<p>cron服务会每分钟检查一次/etc/crontab、/etc/cron.d/、/var/spool/cron文件下的变更。如果发现变化，就会下载到存储器中。因此，即使crontab文件改变了，程序也不需要重新启动。</p>
+</li>
+</ul>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><p>crontab权限问题到/var/adm/cron/下一看，文件cron.allow和cron.deny是否存在<br>用法如下： </p>
+<ul>
+<li><p>如果两个文件都不存在，则只有root用户才能使用crontab命令。 </p>
+</li>
+<li><p>如果cron.allow存在但cron.deny不存在，则只有列在cron.allow文件里的用户才能使用crontab命令，如果root用户也不在里面，则root用户也不能使用crontab。 </p>
+</li>
+<li><p>如果cron.allow不存在, cron.deny存在，则只有列在cron.deny文件里面的用户不能使用crontab命令，其它用户都能使用。 </p>
+</li>
+<li><p>如果两个文件都存在，则列在cron.allow文件中而且没有列在cron.deny中的用户可以使用crontab，如果两个文件中都有同一个用户，</p>
+</li>
+<li>以cron.allow文件里面是否有该用户为准，如果cron.allow中有该用户，则可以使用crontab命令。</li>
+</ul>
+<h2 id="服务的启动"><a href="#服务的启动" class="headerlink" title="服务的启动"></a>服务的启动</h2><p>　　cron是一个linux下 的定时执行工具，可以在无需人工干预的情况下运行作业。</p>
+<ul>
+<li>/sbin/service crond start    //启动服务</li>
+<li>　　/sbin/service crond stop     //关闭服务</li>
+<li>　　/sbin/service crond restart  //重启服务</li>
+<li>　　/sbin/service crond reload   //重新载入配置</li>
+<li>　　/sbin/service crond status   //查看服务状态 </li>
+</ul>
+<p>另外如果只需要任务定时执行一次，可以用at实现。我发现这篇文章就写的不错，可以参考<a href="http://www.cnblogs.com/liyanbin/p/6290096.html" target="_blank" rel="external">http://www.cnblogs.com/liyanbin/p/6290096.html</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  作为菜鸟的我一直以为linux定时任务是一个很复杂的东西，近期自己要写了才知道原来这么简单。总结如下：&lt;br&gt;&lt;img src=&quot;/img/imgs/crontab1.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;crontab命令&quot;&gt;&lt;a href=&quot;#cront
+    
+    </summary>
+    
+      <category term="技术" scheme="http://chenxiaoqiong.me/categories/develop/"/>
+    
+      <category term="linux" scheme="http://chenxiaoqiong.me/categories/develop/linux/"/>
+    
+    
+      <category term="linux" scheme="http://chenxiaoqiong.me/tags/linux/"/>
+    
+      <category term="crontab" scheme="http://chenxiaoqiong.me/tags/crontab/"/>
+    
+  </entry>
   
   <entry>
     <title>MapReduce实例（一）</title>
