@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://chenxiaoqiong.me/"/>
-  <updated>2017-03-27T10:20:26.594Z</updated>
+  <updated>2017-04-05T02:39:11.246Z</updated>
   <id>http://chenxiaoqiong.me/</id>
   
   <author>
@@ -16,134 +16,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>MapReduce实例（二）</title>
-    <link href="http://chenxiaoqiong.me/articles/mapreduce2/"/>
-    <id>http://chenxiaoqiong.me/articles/mapreduce2/</id>
-    <published>2017-03-16T09:04:00.000Z</published>
-    <updated>2017-03-27T10:20:26.594Z</updated>
-    
-    <content type="html"><![CDATA[<p>看了 <a href="http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069" target="_blank" rel="external">MapReduce实例（一）</a>，应该对mapreduce有了基本了解，试着自己去实现下面的例子，相信你会有收获的。</p>
-<h2 id="实例需求"><a href="#实例需求" class="headerlink" title="实例需求"></a>实例需求</h2><p>计算输入文件中的单词出现的次数。输入文件中的内容单词之间用空格隔开，要求输出文件中输出单词、空格、单词出现的次数。</p>
-<blockquote>
-<p>输入文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I am a pretty girl</div><div class="line">I am a programmer I am so proud</div></pre></td></tr></table></figure></p>
-<p>输出文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">I	3</div><div class="line">a	2</div><div class="line">am	3</div><div class="line">girl	1</div><div class="line">pretty	1</div><div class="line">programmer	1</div><div class="line">proud	1</div><div class="line">so	1</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p>熟悉MapReduce过程的读者会很快想到在MapReduce过程中就有排序，我们可以利用IntWritable排序规则，map按数字大小对key进行排序，reduce拿到key，value-list之后，将输入的key作为value输出。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码已上传至我的git：<a href="https://github.com/chenxiaoqiong/sortMapReduce" target="_blank" rel="external">https://github.com/chenxiaoqiong/sortMapReduce</a><br>主要代码：</p>
-<pre><code>/**
- * &lt;h1&gt; MapReduce实例（二） &lt;/h1&gt;
- * SortMapReduce：对输入数字进行排序输出
- * Created by chenxiaoqiong on 2017/3/27 0017 下午 2:14.
- */
-public class SortMapReduce extends Configured implements Tool {
-
-    /**
-     * map：处理输入文件：按输入数字排序输出（数字 1）
-     */
-    public static class SortMapper
-            extends Mapper&lt;LongWritable, Text, IntWritable, IntWritable&gt; {
-
-        private final static IntWritable ints = new IntWritable(1);
-        private IntWritable keyword = new IntWritable();
-
-        @Override
-        protected void map(LongWritable key, Text value, Context context)
-                throws IOException, InterruptedException {
-            String line=value.toString();
-
-            keyword.set(Integer.parseInt(line));
-
-            // void write(KEYOUT var1, VALUEOUT var2) 此方法会按KEYOUT var1自动排序
-            context.write(keyword, ints);
-        }
-    }
-
-    /**
-     * reduce：输出序号和map排序好的数字（序号 数字）
-     */
-    public static class SortReducer
-            extends Reducer&lt;IntWritable, IntWritable, IntWritable, IntWritable&gt; {
-
-        private IntWritable linenum  = new IntWritable(1);
-
-        @Override
-        protected void reduce(IntWritable key, Iterable&lt;IntWritable&gt; value, Context context)
-                throws IOException, InterruptedException {
-
-            for(IntWritable val:value){
-
-                context.write(linenum, key);
-
-                linenum = new IntWritable(linenum.get()+1);
-
-            }
-        }
-    }
-
-    public int run(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
-        //获取配置文件：
-        Configuration conf = super.getConf();
-
-        //创建job：
-        Job job = Job.getInstance(conf, this.getClass().getSimpleName());
-        job.setJarByClass(SortMapReduce.class);
-
-        //配置作业：
-        // Input --&gt; Map --&gt; Reduce --&gt; Output
-        // Input:
-        Path inPath = new Path(args[0]);
-        FileInputFormat.addInputPath(job, inPath);
-        //FileInputFormat过程会将文件处理（Format）成 &lt;偏移量,每一行内容&gt; 的key value对。
-
-        //Map  设置Mapper类，设置Mapper类输出的Key、Value的类型：
-        job.setMapperClass(SortMapper.class);
-        job.setMapOutputKeyClass(IntWritable.class);
-        job.setMapOutputValueClass(IntWritable.class);
-
-        //Reduce  设置Reducer类， 设置最终输出的 Key、Value的类型（setOutputKeyClass、setOutputValueClass）：
-        job.setReducerClass(SortReducer.class);
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
-
-        //Output 设置输出路径
-        Path outPath = new Path(args[1]);
-        FileOutputFormat.setOutputPath(job, outPath);
-
-        //提交任务
-        boolean isSucess = job.waitForCompletion(true);
-        return isSucess ? 1 : 0;     //成功返回1 ，失败返回0
-    }
-
-    public static void main(String[] args) throws Exception {
-        Configuration conf = new Configuration();
-        int status = ToolRunner.run(conf, new SortMapReduce(), args);
-        System.exit(status);
-    }
-}
-</code></pre><p>pom.xml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;hadoop&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;countMapReduce&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">            &lt;id&gt;apache&lt;/id&gt;</div><div class="line">            &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">    &lt;/repositories&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-core&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;excludeTransitive&gt;<span class="literal">false</span>&lt;/excludeTransitive&gt;</div><div class="line">                    &lt;stripVersion&gt;<span class="literal">true</span>&lt;/stripVersion&gt;</div><div class="line">                    &lt;outputDirectory&gt;./lib&lt;/outputDirectory&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line"></div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;看了 &lt;a href=&quot;http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MapReduce实例（一）&lt;/a&gt;，应该对mapreduc
-    
-    </summary>
-    
-      <category term="技术" scheme="http://chenxiaoqiong.me/categories/develop/"/>
-    
-      <category term="MapReduce" scheme="http://chenxiaoqiong.me/categories/develop/MapReduce/"/>
-    
-    
-      <category term="Hadoop，MapReduce，大数据" scheme="http://chenxiaoqiong.me/tags/Hadoop%EF%BC%8CMapReduce%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
     <title>MapReduce实例（一）</title>
     <link href="http://chenxiaoqiong.me/articles/mapreduce1/"/>
     <id>http://chenxiaoqiong.me/articles/mapreduce1/</id>
     <published>2017-03-16T09:04:00.000Z</published>
-    <updated>2017-03-27T10:11:19.637Z</updated>
+    <updated>2017-04-05T02:39:11.246Z</updated>
     
     <content type="html"><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>Hadoop:</strong>的框架最核心的设计就是：HDFS和MapReduce。HDFS为海量的数据提供了存储，则MapReduce为海量的数据提供了计算。<br><strong>MapReduce:</strong>是处理大量半结构化数据集合的编程模型。最简单的 MapReduce应用程序至少包含 3 个部分：一个 Map 函数、一个 Reduce 函数和一个 main 函数。我的简单理解是map按照一定规则对输入做一系列的处理，reduce进行输出，输出前可能做一些操作，比如统计之类的。</p>
 <h2 id="一个有趣的例子"><a href="#一个有趣的例子" class="headerlink" title="一个有趣的例子"></a>一个有趣的例子</h2><p><img src="http://img.blog.csdn.net/20170317145634434?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYWNtY2hlbnhpYW9xaW9uZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt=""><br>你想数出一摞牌中有多少张黑桃。直观方式是一张一张检查并且数出有多少张是黑桃？<br>MapReduce方法则是：</p>
@@ -260,7 +137,138 @@ public class WordCountMapReduce extends Configured implements Tool {
       <category term="MapReduce" scheme="http://chenxiaoqiong.me/categories/develop/MapReduce/"/>
     
     
-      <category term="Hadoop，MapReduce，大数据" scheme="http://chenxiaoqiong.me/tags/Hadoop%EF%BC%8CMapReduce%EF%BC%8C%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="Hadoop" scheme="http://chenxiaoqiong.me/tags/Hadoop/"/>
+    
+      <category term="MapReduce" scheme="http://chenxiaoqiong.me/tags/MapReduce/"/>
+    
+      <category term="大数据" scheme="http://chenxiaoqiong.me/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MapReduce实例（二）</title>
+    <link href="http://chenxiaoqiong.me/articles/mapreduce2/"/>
+    <id>http://chenxiaoqiong.me/articles/mapreduce2/</id>
+    <published>2017-03-16T09:04:00.000Z</published>
+    <updated>2017-04-05T02:38:48.965Z</updated>
+    
+    <content type="html"><![CDATA[<p>看了 <a href="http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069" target="_blank" rel="external">MapReduce实例（一）</a>，应该对mapreduce有了基本了解，试着自己去实现下面的例子，相信你会有收获的。</p>
+<h2 id="实例需求"><a href="#实例需求" class="headerlink" title="实例需求"></a>实例需求</h2><p>计算输入文件中的单词出现的次数。输入文件中的内容单词之间用空格隔开，要求输出文件中输出单词、空格、单词出现的次数。</p>
+<blockquote>
+<p>输入文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I am a pretty girl</div><div class="line">I am a programmer I am so proud</div></pre></td></tr></table></figure></p>
+<p>输出文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">I	3</div><div class="line">a	2</div><div class="line">am	3</div><div class="line">girl	1</div><div class="line">pretty	1</div><div class="line">programmer	1</div><div class="line">proud	1</div><div class="line">so	1</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p>熟悉MapReduce过程的读者会很快想到在MapReduce过程中就有排序，我们可以利用IntWritable排序规则，map按数字大小对key进行排序，reduce拿到key，value-list之后，将输入的key作为value输出。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码已上传至我的git：<a href="https://github.com/chenxiaoqiong/sortMapReduce" target="_blank" rel="external">https://github.com/chenxiaoqiong/sortMapReduce</a><br>主要代码：</p>
+<pre><code>/**
+ * &lt;h1&gt; MapReduce实例（二） &lt;/h1&gt;
+ * SortMapReduce：对输入数字进行排序输出
+ * Created by chenxiaoqiong on 2017/3/27 0017 下午 2:14.
+ */
+public class SortMapReduce extends Configured implements Tool {
+
+    /**
+     * map：处理输入文件：按输入数字排序输出（数字 1）
+     */
+    public static class SortMapper
+            extends Mapper&lt;LongWritable, Text, IntWritable, IntWritable&gt; {
+
+        private final static IntWritable ints = new IntWritable(1);
+        private IntWritable keyword = new IntWritable();
+
+        @Override
+        protected void map(LongWritable key, Text value, Context context)
+                throws IOException, InterruptedException {
+            String line=value.toString();
+
+            keyword.set(Integer.parseInt(line));
+
+            // void write(KEYOUT var1, VALUEOUT var2) 此方法会按KEYOUT var1自动排序
+            context.write(keyword, ints);
+        }
+    }
+
+    /**
+     * reduce：输出序号和map排序好的数字（序号 数字）
+     */
+    public static class SortReducer
+            extends Reducer&lt;IntWritable, IntWritable, IntWritable, IntWritable&gt; {
+
+        private IntWritable linenum  = new IntWritable(1);
+
+        @Override
+        protected void reduce(IntWritable key, Iterable&lt;IntWritable&gt; value, Context context)
+                throws IOException, InterruptedException {
+
+            for(IntWritable val:value){
+
+                context.write(linenum, key);
+
+                linenum = new IntWritable(linenum.get()+1);
+
+            }
+        }
+    }
+
+    public int run(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+        //获取配置文件：
+        Configuration conf = super.getConf();
+
+        //创建job：
+        Job job = Job.getInstance(conf, this.getClass().getSimpleName());
+        job.setJarByClass(SortMapReduce.class);
+
+        //配置作业：
+        // Input --&gt; Map --&gt; Reduce --&gt; Output
+        // Input:
+        Path inPath = new Path(args[0]);
+        FileInputFormat.addInputPath(job, inPath);
+        //FileInputFormat过程会将文件处理（Format）成 &lt;偏移量,每一行内容&gt; 的key value对。
+
+        //Map  设置Mapper类，设置Mapper类输出的Key、Value的类型：
+        job.setMapperClass(SortMapper.class);
+        job.setMapOutputKeyClass(IntWritable.class);
+        job.setMapOutputValueClass(IntWritable.class);
+
+        //Reduce  设置Reducer类， 设置最终输出的 Key、Value的类型（setOutputKeyClass、setOutputValueClass）：
+        job.setReducerClass(SortReducer.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
+
+        //Output 设置输出路径
+        Path outPath = new Path(args[1]);
+        FileOutputFormat.setOutputPath(job, outPath);
+
+        //提交任务
+        boolean isSucess = job.waitForCompletion(true);
+        return isSucess ? 1 : 0;     //成功返回1 ，失败返回0
+    }
+
+    public static void main(String[] args) throws Exception {
+        Configuration conf = new Configuration();
+        int status = ToolRunner.run(conf, new SortMapReduce(), args);
+        System.exit(status);
+    }
+}
+</code></pre><p>pom.xml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;hadoop&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;countMapReduce&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">            &lt;id&gt;apache&lt;/id&gt;</div><div class="line">            &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">    &lt;/repositories&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-core&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;excludeTransitive&gt;<span class="literal">false</span>&lt;/excludeTransitive&gt;</div><div class="line">                    &lt;stripVersion&gt;<span class="literal">true</span>&lt;/stripVersion&gt;</div><div class="line">                    &lt;outputDirectory&gt;./lib&lt;/outputDirectory&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line"></div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看了 &lt;a href=&quot;http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MapReduce实例（一）&lt;/a&gt;，应该对mapreduc
+    
+    </summary>
+    
+      <category term="技术" scheme="http://chenxiaoqiong.me/categories/develop/"/>
+    
+      <category term="MapReduce" scheme="http://chenxiaoqiong.me/categories/develop/MapReduce/"/>
+    
+    
+      <category term="Hadoop" scheme="http://chenxiaoqiong.me/tags/Hadoop/"/>
+    
+      <category term="MapReduce" scheme="http://chenxiaoqiong.me/tags/MapReduce/"/>
+    
+      <category term="大数据" scheme="http://chenxiaoqiong.me/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
