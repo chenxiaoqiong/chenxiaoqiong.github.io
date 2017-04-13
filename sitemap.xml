@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://chenxiaoqiong.me/articles/linux-java-mysql-maven-tomcat-nginx/</loc>
+    
+    <lastmod>2017-04-13T08:37:09.212Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://chenxiaoqiong.me/articles/crontab/</loc>
     
-    <lastmod>2017-04-05T07:20:23.121Z</lastmod>
+    <lastmod>2017-04-05T07:42:39.571Z</lastmod>
     
   </url>
   
@@ -68,13 +75,6 @@
     <loc>http://chenxiaoqiong.me/articles/idea/</loc>
     
     <lastmod>2016-11-03T06:37:23.175Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://chenxiaoqiong.me/articles/hello-world/</loc>
-    
-    <lastmod>2016-11-01T09:38:06.086Z</lastmod>
     
   </url>
   
