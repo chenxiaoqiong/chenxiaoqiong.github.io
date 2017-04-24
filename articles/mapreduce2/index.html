@@ -73,7 +73,7 @@
 				<h1 class="site-name"><a href="/" title="ChenXiaoqiong">ChenXiaoqiong</a></h1>
 				<a class="blog-motto">混迹在程序界的一枚小女子 ^♪ ^♪ ^♪</a>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -93,7 +93,7 @@
 					
                                             <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
                                             <label>Search</label>
-                                        <input name="s" type="hidden" value= 18810832440 ><input type="text" name="q" size="30" placeholder="Search"><br>
+                                        <input name="s" type="hidden" value= 18810832440 ><input type="text" name="q" size="30" placeholder="搜索"><br>
 					
 					</li>
 				</ul>
@@ -115,7 +115,7 @@
     </p>
   <p class="article-time">
     <time datetime="2017-03-16T09:04:00.000Z" itemprop="datePublished">2017-03-16</time>
-    Updated:<time datetime="2017-04-05T02:38:48.965Z" itemprop="dateModified">2017-04-05</time>
+    更新日期:<time datetime="2017-04-05T02:38:48.965Z" itemprop="dateModified">2017-04-05</time>
     
   </p>
 </header>
@@ -123,7 +123,7 @@
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">Contents</strong>
+			<strong class="toc-title">文章目录</strong>
 		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例需求"><span class="toc-number">1.</span> <span class="toc-text">实例需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计思路"><span class="toc-number">2.</span> <span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li></ol>
 		</div>
 		
@@ -227,73 +227,74 @@ public class SortMapReduce extends Configured implements Tool {
 }
 </code></pre><p>pom.xml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;hadoop&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;countMapReduce&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">            &lt;id&gt;apache&lt;/id&gt;</div><div class="line">            &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">    &lt;/repositories&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-core&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;excludeTransitive&gt;<span class="literal">false</span>&lt;/excludeTransitive&gt;</div><div class="line">                    &lt;stripVersion&gt;<span class="literal">true</span>&lt;/stripVersion&gt;</div><div class="line">                    &lt;outputDirectory&gt;./lib&lt;/outputDirectory&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line"></div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
   
-	 <div style="float:right;font-size:12px;">本文总阅读量 <span id="busuanzi_value_page_pv"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+	 <div style="float:right;font-size:12px;">本文总阅读量 <span id="busuanzi_value_page_pv"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div> 
+
+    <div id="cyEmoji" role="cylabs" data-use="emoji"></div>
+
 	</div>
-		<footer class="article-footer clearfix">
+		<!-- <footer class="article-footer clearfix">
 
-  <div class="article-tags">
-  
-  <span></span> <a href="/tags/Hadoop/">Hadoop</a><a href="/tags/MapReduce/">MapReduce</a><a href="/tags/大数据/">大数据</a>
-  </div>
-
-
-<div class="article-categories">
-  <span></span>
-  <a class="article-category-link" href="/categories/develop/">技术</a>►<a class="article-category-link" href="/categories/develop/MapReduce/">MapReduce</a>
-</div>
-
-
-
-
-<div class="article-share" id="share">
-
-  <div data-url="http://chenxiaoqiong.me/articles/mapreduce2/" data-title="MapReduce实例（二） | ChenXiaoqiong" data-tsina="null" class="share clearfix">
-  </div>
-
-</div>
-</footer>   	       
+<div id="cyEmoji" role="cylabs" data-use="emoji"></div>
+</footer> -->    
 	</article>
+	
 	
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/articles/crontab/" title="Linux Crontab 定时任务">
+ <a href="/articles/mapreduce1/" title="MapReduce实例（一）">
   <strong>PREVIOUS:</strong><br/>
   <span>
-  Linux Crontab 定时任务</span>
+  MapReduce实例（一）</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/articles/mapreduce1/"  title="MapReduce实例（一）">
+<a href="/articles/logback/"  title="logback配置详解">
  <strong>NEXT:</strong><br/> 
- <span>MapReduce实例（一）
+ <span>logback配置详解
 </span>
 </a>
 </div>
 
 </nav>
 
-	
-<section class="comment">
-	
-	<div class="ds-thread" data-title="MapReduce实例（二）" data-thread-key="mapreduce2" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.me/post/mapreduce2"></div>
-	
+	<section class="comment">
+
+<!-- 代码1：放在页面需要展示的位置  -->
+<!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
+<!-- <div id="cyReward" role="cylabs" data-use="reward"></div> -->
+
+<div id="cyEmoji" role="cylabs" data-use="emoji"></div>
+<!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
+<!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
+<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
+<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysXdSE32"></script>  
+
+<div id="SOHUCS"></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cysXdSE32'; 
+var conf = 'aac77fe69d020afd312d469327ab0646'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) { 
+window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>	
 </section>
 
 
+</div>
 
-</div>  
-      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">Contents</strong>
+  <strong class="toc-title">文章目录</strong>
   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#实例需求"><span class="toc-number">1.</span> <span class="toc-text">实例需求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设计思路"><span class="toc-number">2.</span> <span class="toc-text">设计思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
 <aside class="clearfix">
 <div id="authorInfo">
 	
@@ -370,7 +371,7 @@ public class SortMapReduce extends Configured implements Tool {
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS</a>
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
 </div>
 
 </aside>
