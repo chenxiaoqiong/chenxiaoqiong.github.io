@@ -4,9 +4,9 @@
   <subtitle>混迹在程序界的一枚小女子 ^♪ ^♪ ^♪</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://chenxiaoqiong.com/"/>
-  <updated>2017-04-13T08:40:46.016Z</updated>
-  <id>http://chenxiaoqiong.com/</id>
+  <link href="http://www.chenxiaoqiong.com/"/>
+  <updated>2017-05-03T07:18:47.710Z</updated>
+  <id>http://www.chenxiaoqiong.com/</id>
   
   <author>
     <name>ChenXiaoqiong</name>
@@ -17,17 +17,17 @@
   
   <entry>
     <title>linux环境搭建（java+mysql+maven+tomcat+nginx）</title>
-    <link href="http://chenxiaoqiong.com/articles/linux-java-mysql-maven-tomcat-nginx/"/>
-    <id>http://chenxiaoqiong.com/articles/linux-java-mysql-maven-tomcat-nginx/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/linux-java-mysql-maven-tomcat-nginx/"/>
+    <id>http://www.chenxiaoqiong.com/articles/linux-java-mysql-maven-tomcat-nginx/</id>
     <published>2017-04-12T11:04:00.000Z</published>
-    <updated>2017-04-13T08:40:46.016Z</updated>
+    <updated>2017-05-03T07:18:47.710Z</updated>
     
     <content type="html"><![CDATA[<h2 id="jdk安装"><a href="#jdk安装" class="headerlink" title="jdk安装"></a>jdk安装</h2><ol>
-<li>到<a href="http://www.oracle.com/technetwork/java/javase/downloads" target="_blank" rel="external">官网</a>下载安装包<br>拷贝下载好的jdk-8u121-linux-arm32-vfp-hflt.tar.gz到你要安装的目录，我的目录是：/usr/local/java</li>
+<li>到<a href="http://www.oracle.com/technetwork/java/javase/downloads" target="_blank" rel="external">官网</a>下载安装包，拷贝下载好的jdk-8u121-linux-arm32-vfp-hflt.tar.gz到你要安装的目录，我的目录是：/usr/local/java</li>
 <li><p>解压jdk到当前目录 </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf jdk-8u121-linux-arm32-vfp-hflt.tar.gz</div></pre></td></tr></table></figure>
 </li>
-<li><p>编辑配置文件，配置环境变量 vim /etc/profile 添加如下内容：JAVA_HOME根据实际目录   </p>
+<li><p>编辑配置文件（命令：vim /etc/profile），添加如下内容：JAVA_HOME根据实际目录   </p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/usr/local/java/jdk1.8.0_121</div><div class="line">JRE_HOME=/usr/local/java/jdk1.8.0_121/jre</div><div class="line">CLASS_PATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib</div><div class="line">PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin</div><div class="line">export JAVA_HOME JRE_HOME CLASS_PATH PATH</div></pre></td></tr></table></figure>
 </li>
 <li><p>重新加载配置</p>
@@ -62,8 +62,8 @@
 <li><p>解压安装包到当前文件夹</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar-zxvf apache-maven-3.3.9 .tar.gz</div></pre></td></tr></table></figure>
 </li>
-<li><p>编辑配置文件，配置环境变量：MAVEN_HOME根据你自己的路径来</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vim /etc/profile </div><div class="line">添加如下内容： </div><div class="line">export MAVEN_HOME=/usr/local/apache-maven-3.3.9  </div><div class="line">export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANTX_HOME/bin:$ANT_HOME/bin:$MYSQL_HOME/bin:$PATH</div></pre></td></tr></table></figure>
+<li><p>编辑配置文件（vim /etc/profile），添加如下内容：MAVEN_HOME根据你自己的路径来</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export MAVEN_HOME=/usr/local/apache-maven-3.3.9  </div><div class="line">export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$ANTX_HOME/bin:$ANT_HOME/bin:$MYSQL_HOME/bin:$PATH</div></pre></td></tr></table></figure>
 </li>
 <li><p>执行命令重新加载配置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">source /etc/profile</div></pre></td></tr></table></figure>
@@ -75,7 +75,7 @@
 <p>恭喜你，maven安装成功！</p>
 <h2 id="tomcat安装"><a href="#tomcat安装" class="headerlink" title="tomcat安装"></a>tomcat安装</h2><p>到<a href="http://tomcat.apache.org/" target="_blank" rel="external">官网</a>下载XX.tar.gz安装包</p>
 <p>解压安装包到你的目录就可以使用了</p>
-<h2 id="nginx安装"><a href="#nginx安装" class="headerlink" title="nginx安装"></a>nginx安装</h2><p>参考我的这篇文章 <a href="http://chenxiaoqiong.me/articles/nginx" target="_blank" rel="external">Nginx安装与配置</a></p>
+<h2 id="nginx安装"><a href="#nginx安装" class="headerlink" title="nginx安装"></a>nginx安装</h2><p>参考我的这篇文章 <a href="http://chenxiaoqiong.com/articles/nginx" target="_blank" rel="external">Nginx安装与配置</a></p>
 ]]></content>
     
     <summary type="html">
@@ -85,31 +85,31 @@
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
     
-      <category term="linux" scheme="http://chenxiaoqiong.com/categories/develop/linux/"/>
+      <category term="linux" scheme="http://www.chenxiaoqiong.com/categories/develop/linux/"/>
     
     
-      <category term="tomcat" scheme="http://chenxiaoqiong.com/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://www.chenxiaoqiong.com/tags/tomcat/"/>
     
-      <category term="linux" scheme="http://chenxiaoqiong.com/tags/linux/"/>
+      <category term="linux" scheme="http://www.chenxiaoqiong.com/tags/linux/"/>
     
-      <category term="环境搭建" scheme="http://chenxiaoqiong.com/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <category term="环境搭建" scheme="http://www.chenxiaoqiong.com/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
-      <category term="mysql" scheme="http://chenxiaoqiong.com/tags/mysql/"/>
+      <category term="mysql" scheme="http://www.chenxiaoqiong.com/tags/mysql/"/>
     
-      <category term="java" scheme="http://chenxiaoqiong.com/tags/java/"/>
+      <category term="java" scheme="http://www.chenxiaoqiong.com/tags/java/"/>
     
-      <category term="maven" scheme="http://chenxiaoqiong.com/tags/maven/"/>
+      <category term="maven" scheme="http://www.chenxiaoqiong.com/tags/maven/"/>
     
-      <category term="nginx" scheme="http://chenxiaoqiong.com/tags/nginx/"/>
+      <category term="nginx" scheme="http://www.chenxiaoqiong.com/tags/nginx/"/>
     
   </entry>
   
   <entry>
     <title>Linux Crontab 定时任务</title>
-    <link href="http://chenxiaoqiong.com/articles/crontab/"/>
-    <id>http://chenxiaoqiong.com/articles/crontab/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/crontab/"/>
+    <id>http://www.chenxiaoqiong.com/articles/crontab/</id>
     <published>2017-04-05T03:04:00.000Z</published>
     <updated>2017-04-05T07:42:39.571Z</updated>
     
@@ -165,21 +165,148 @@
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
     
-      <category term="linux" scheme="http://chenxiaoqiong.com/categories/develop/linux/"/>
+      <category term="linux" scheme="http://www.chenxiaoqiong.com/categories/develop/linux/"/>
     
     
-      <category term="linux" scheme="http://chenxiaoqiong.com/tags/linux/"/>
+      <category term="linux" scheme="http://www.chenxiaoqiong.com/tags/linux/"/>
     
-      <category term="crontab" scheme="http://chenxiaoqiong.com/tags/crontab/"/>
+      <category term="crontab" scheme="http://www.chenxiaoqiong.com/tags/crontab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MapReduce实例（二）</title>
+    <link href="http://www.chenxiaoqiong.com/articles/mapreduce2/"/>
+    <id>http://www.chenxiaoqiong.com/articles/mapreduce2/</id>
+    <published>2017-03-16T09:04:00.000Z</published>
+    <updated>2017-04-05T02:38:48.965Z</updated>
+    
+    <content type="html"><![CDATA[<p>看了 <a href="http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069" target="_blank" rel="external">MapReduce实例（一）</a>，应该对mapreduce有了基本了解，试着自己去实现下面的例子，相信你会有收获的。</p>
+<h2 id="实例需求"><a href="#实例需求" class="headerlink" title="实例需求"></a>实例需求</h2><p>计算输入文件中的单词出现的次数。输入文件中的内容单词之间用空格隔开，要求输出文件中输出单词、空格、单词出现的次数。</p>
+<blockquote>
+<p>输入文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I am a pretty girl</div><div class="line">I am a programmer I am so proud</div></pre></td></tr></table></figure></p>
+<p>输出文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">I	3</div><div class="line">a	2</div><div class="line">am	3</div><div class="line">girl	1</div><div class="line">pretty	1</div><div class="line">programmer	1</div><div class="line">proud	1</div><div class="line">so	1</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p>熟悉MapReduce过程的读者会很快想到在MapReduce过程中就有排序，我们可以利用IntWritable排序规则，map按数字大小对key进行排序，reduce拿到key，value-list之后，将输入的key作为value输出。</p>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码已上传至我的git：<a href="https://github.com/chenxiaoqiong/sortMapReduce" target="_blank" rel="external">https://github.com/chenxiaoqiong/sortMapReduce</a><br>主要代码：</p>
+<pre><code>/**
+ * &lt;h1&gt; MapReduce实例（二） &lt;/h1&gt;
+ * SortMapReduce：对输入数字进行排序输出
+ * Created by chenxiaoqiong on 2017/3/27 0017 下午 2:14.
+ */
+public class SortMapReduce extends Configured implements Tool {
+
+    /**
+     * map：处理输入文件：按输入数字排序输出（数字 1）
+     */
+    public static class SortMapper
+            extends Mapper&lt;LongWritable, Text, IntWritable, IntWritable&gt; {
+
+        private final static IntWritable ints = new IntWritable(1);
+        private IntWritable keyword = new IntWritable();
+
+        @Override
+        protected void map(LongWritable key, Text value, Context context)
+                throws IOException, InterruptedException {
+            String line=value.toString();
+
+            keyword.set(Integer.parseInt(line));
+
+            // void write(KEYOUT var1, VALUEOUT var2) 此方法会按KEYOUT var1自动排序
+            context.write(keyword, ints);
+        }
+    }
+
+    /**
+     * reduce：输出序号和map排序好的数字（序号 数字）
+     */
+    public static class SortReducer
+            extends Reducer&lt;IntWritable, IntWritable, IntWritable, IntWritable&gt; {
+
+        private IntWritable linenum  = new IntWritable(1);
+
+        @Override
+        protected void reduce(IntWritable key, Iterable&lt;IntWritable&gt; value, Context context)
+                throws IOException, InterruptedException {
+
+            for(IntWritable val:value){
+
+                context.write(linenum, key);
+
+                linenum = new IntWritable(linenum.get()+1);
+
+            }
+        }
+    }
+
+    public int run(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
+        //获取配置文件：
+        Configuration conf = super.getConf();
+
+        //创建job：
+        Job job = Job.getInstance(conf, this.getClass().getSimpleName());
+        job.setJarByClass(SortMapReduce.class);
+
+        //配置作业：
+        // Input --&gt; Map --&gt; Reduce --&gt; Output
+        // Input:
+        Path inPath = new Path(args[0]);
+        FileInputFormat.addInputPath(job, inPath);
+        //FileInputFormat过程会将文件处理（Format）成 &lt;偏移量,每一行内容&gt; 的key value对。
+
+        //Map  设置Mapper类，设置Mapper类输出的Key、Value的类型：
+        job.setMapperClass(SortMapper.class);
+        job.setMapOutputKeyClass(IntWritable.class);
+        job.setMapOutputValueClass(IntWritable.class);
+
+        //Reduce  设置Reducer类， 设置最终输出的 Key、Value的类型（setOutputKeyClass、setOutputValueClass）：
+        job.setReducerClass(SortReducer.class);
+        job.setOutputKeyClass(Text.class);
+        job.setOutputValueClass(IntWritable.class);
+
+        //Output 设置输出路径
+        Path outPath = new Path(args[1]);
+        FileOutputFormat.setOutputPath(job, outPath);
+
+        //提交任务
+        boolean isSucess = job.waitForCompletion(true);
+        return isSucess ? 1 : 0;     //成功返回1 ，失败返回0
+    }
+
+    public static void main(String[] args) throws Exception {
+        Configuration conf = new Configuration();
+        int status = ToolRunner.run(conf, new SortMapReduce(), args);
+        System.exit(status);
+    }
+}
+</code></pre><p>pom.xml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;hadoop&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;countMapReduce&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">            &lt;id&gt;apache&lt;/id&gt;</div><div class="line">            &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">    &lt;/repositories&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-core&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;excludeTransitive&gt;<span class="literal">false</span>&lt;/excludeTransitive&gt;</div><div class="line">                    &lt;stripVersion&gt;<span class="literal">true</span>&lt;/stripVersion&gt;</div><div class="line">                    &lt;outputDirectory&gt;./lib&lt;/outputDirectory&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line"></div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;看了 &lt;a href=&quot;http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MapReduce实例（一）&lt;/a&gt;，应该对mapreduc
+    
+    </summary>
+    
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
+    
+      <category term="MapReduce" scheme="http://www.chenxiaoqiong.com/categories/develop/MapReduce/"/>
+    
+    
+      <category term="Hadoop" scheme="http://www.chenxiaoqiong.com/tags/Hadoop/"/>
+    
+      <category term="MapReduce" scheme="http://www.chenxiaoqiong.com/tags/MapReduce/"/>
+    
+      <category term="大数据" scheme="http://www.chenxiaoqiong.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
   <entry>
     <title>MapReduce实例（一）</title>
-    <link href="http://chenxiaoqiong.com/articles/mapreduce1/"/>
-    <id>http://chenxiaoqiong.com/articles/mapreduce1/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/mapreduce1/"/>
+    <id>http://www.chenxiaoqiong.com/articles/mapreduce1/</id>
     <published>2017-03-16T09:04:00.000Z</published>
     <updated>2017-04-05T02:39:11.246Z</updated>
     
@@ -293,150 +420,23 @@ public class WordCountMapReduce extends Configured implements Tool {
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
     
-      <category term="MapReduce" scheme="http://chenxiaoqiong.com/categories/develop/MapReduce/"/>
-    
-    
-      <category term="Hadoop" scheme="http://chenxiaoqiong.com/tags/Hadoop/"/>
-    
-      <category term="MapReduce" scheme="http://chenxiaoqiong.com/tags/MapReduce/"/>
-    
-      <category term="大数据" scheme="http://chenxiaoqiong.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MapReduce实例（二）</title>
-    <link href="http://chenxiaoqiong.com/articles/mapreduce2/"/>
-    <id>http://chenxiaoqiong.com/articles/mapreduce2/</id>
-    <published>2017-03-16T09:04:00.000Z</published>
-    <updated>2017-04-05T02:38:48.965Z</updated>
-    
-    <content type="html"><![CDATA[<p>看了 <a href="http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069" target="_blank" rel="external">MapReduce实例（一）</a>，应该对mapreduce有了基本了解，试着自己去实现下面的例子，相信你会有收获的。</p>
-<h2 id="实例需求"><a href="#实例需求" class="headerlink" title="实例需求"></a>实例需求</h2><p>计算输入文件中的单词出现的次数。输入文件中的内容单词之间用空格隔开，要求输出文件中输出单词、空格、单词出现的次数。</p>
-<blockquote>
-<p>输入文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">I am a pretty girl</div><div class="line">I am a programmer I am so proud</div></pre></td></tr></table></figure></p>
-<p>输出文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">I	3</div><div class="line">a	2</div><div class="line">am	3</div><div class="line">girl	1</div><div class="line">pretty	1</div><div class="line">programmer	1</div><div class="line">proud	1</div><div class="line">so	1</div></pre></td></tr></table></figure></p>
-</blockquote>
-<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p>熟悉MapReduce过程的读者会很快想到在MapReduce过程中就有排序，我们可以利用IntWritable排序规则，map按数字大小对key进行排序，reduce拿到key，value-list之后，将输入的key作为value输出。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><p>代码已上传至我的git：<a href="https://github.com/chenxiaoqiong/sortMapReduce" target="_blank" rel="external">https://github.com/chenxiaoqiong/sortMapReduce</a><br>主要代码：</p>
-<pre><code>/**
- * &lt;h1&gt; MapReduce实例（二） &lt;/h1&gt;
- * SortMapReduce：对输入数字进行排序输出
- * Created by chenxiaoqiong on 2017/3/27 0017 下午 2:14.
- */
-public class SortMapReduce extends Configured implements Tool {
-
-    /**
-     * map：处理输入文件：按输入数字排序输出（数字 1）
-     */
-    public static class SortMapper
-            extends Mapper&lt;LongWritable, Text, IntWritable, IntWritable&gt; {
-
-        private final static IntWritable ints = new IntWritable(1);
-        private IntWritable keyword = new IntWritable();
-
-        @Override
-        protected void map(LongWritable key, Text value, Context context)
-                throws IOException, InterruptedException {
-            String line=value.toString();
-
-            keyword.set(Integer.parseInt(line));
-
-            // void write(KEYOUT var1, VALUEOUT var2) 此方法会按KEYOUT var1自动排序
-            context.write(keyword, ints);
-        }
-    }
-
-    /**
-     * reduce：输出序号和map排序好的数字（序号 数字）
-     */
-    public static class SortReducer
-            extends Reducer&lt;IntWritable, IntWritable, IntWritable, IntWritable&gt; {
-
-        private IntWritable linenum  = new IntWritable(1);
-
-        @Override
-        protected void reduce(IntWritable key, Iterable&lt;IntWritable&gt; value, Context context)
-                throws IOException, InterruptedException {
-
-            for(IntWritable val:value){
-
-                context.write(linenum, key);
-
-                linenum = new IntWritable(linenum.get()+1);
-
-            }
-        }
-    }
-
-    public int run(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
-        //获取配置文件：
-        Configuration conf = super.getConf();
-
-        //创建job：
-        Job job = Job.getInstance(conf, this.getClass().getSimpleName());
-        job.setJarByClass(SortMapReduce.class);
-
-        //配置作业：
-        // Input --&gt; Map --&gt; Reduce --&gt; Output
-        // Input:
-        Path inPath = new Path(args[0]);
-        FileInputFormat.addInputPath(job, inPath);
-        //FileInputFormat过程会将文件处理（Format）成 &lt;偏移量,每一行内容&gt; 的key value对。
-
-        //Map  设置Mapper类，设置Mapper类输出的Key、Value的类型：
-        job.setMapperClass(SortMapper.class);
-        job.setMapOutputKeyClass(IntWritable.class);
-        job.setMapOutputValueClass(IntWritable.class);
-
-        //Reduce  设置Reducer类， 设置最终输出的 Key、Value的类型（setOutputKeyClass、setOutputValueClass）：
-        job.setReducerClass(SortReducer.class);
-        job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
-
-        //Output 设置输出路径
-        Path outPath = new Path(args[1]);
-        FileOutputFormat.setOutputPath(job, outPath);
-
-        //提交任务
-        boolean isSucess = job.waitForCompletion(true);
-        return isSucess ? 1 : 0;     //成功返回1 ，失败返回0
-    }
-
-    public static void main(String[] args) throws Exception {
-        Configuration conf = new Configuration();
-        int status = ToolRunner.run(conf, new SortMapReduce(), args);
-        System.exit(status);
-    }
-}
-</code></pre><p>pom.xml<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span>?&gt;</div><div class="line">&lt;project xmlns=<span class="string">"http://maven.apache.org/POM/4.0.0"</span></div><div class="line">         xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></div><div class="line">         xsi:schemaLocation=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;</div><div class="line">    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;</div><div class="line"></div><div class="line">    &lt;groupId&gt;hadoop&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;countMapReduce&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;</div><div class="line"></div><div class="line">    &lt;repositories&gt;</div><div class="line">        &lt;repository&gt;</div><div class="line">            &lt;id&gt;apache&lt;/id&gt;</div><div class="line">            &lt;url&gt;http://maven.apache.org&lt;/url&gt;</div><div class="line">        &lt;/repository&gt;</div><div class="line">    &lt;/repositories&gt;</div><div class="line">    &lt;dependencies&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-common&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-hdfs&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-client&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;2.7.3&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">        &lt;dependency&gt;</div><div class="line">            &lt;groupId&gt;org.apache.hadoop&lt;/groupId&gt;</div><div class="line">            &lt;artifactId&gt;hadoop-core&lt;/artifactId&gt;</div><div class="line">            &lt;version&gt;1.2.1&lt;/version&gt;</div><div class="line">        &lt;/dependency&gt;</div><div class="line">    &lt;/dependencies&gt;</div><div class="line">    &lt;build&gt;</div><div class="line">        &lt;plugins&gt;</div><div class="line">            &lt;plugin&gt;</div><div class="line">                &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;</div><div class="line">                &lt;configuration&gt;</div><div class="line">                    &lt;excludeTransitive&gt;<span class="literal">false</span>&lt;/excludeTransitive&gt;</div><div class="line">                    &lt;stripVersion&gt;<span class="literal">true</span>&lt;/stripVersion&gt;</div><div class="line">                    &lt;outputDirectory&gt;./lib&lt;/outputDirectory&gt;</div><div class="line">                &lt;/configuration&gt;</div><div class="line"></div><div class="line">            &lt;/plugin&gt;</div><div class="line">        &lt;/plugins&gt;</div><div class="line">    &lt;/build&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;看了 &lt;a href=&quot;http://blog.csdn.net/acmchenxiaoqiong/article/details/62888069&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MapReduce实例（一）&lt;/a&gt;，应该对mapreduc
-    
-    </summary>
-    
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
-    
-      <category term="MapReduce" scheme="http://chenxiaoqiong.com/categories/develop/MapReduce/"/>
+      <category term="MapReduce" scheme="http://www.chenxiaoqiong.com/categories/develop/MapReduce/"/>
     
     
-      <category term="Hadoop" scheme="http://chenxiaoqiong.com/tags/Hadoop/"/>
+      <category term="Hadoop" scheme="http://www.chenxiaoqiong.com/tags/Hadoop/"/>
     
-      <category term="MapReduce" scheme="http://chenxiaoqiong.com/tags/MapReduce/"/>
+      <category term="MapReduce" scheme="http://www.chenxiaoqiong.com/tags/MapReduce/"/>
     
-      <category term="大数据" scheme="http://chenxiaoqiong.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+      <category term="大数据" scheme="http://www.chenxiaoqiong.com/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
   <entry>
     <title>logback配置详解</title>
-    <link href="http://chenxiaoqiong.com/articles/logback/"/>
-    <id>http://chenxiaoqiong.com/articles/logback/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/logback/"/>
+    <id>http://www.chenxiaoqiong.com/articles/logback/</id>
     <published>2016-12-29T09:47:05.000Z</published>
     <updated>2017-01-24T04:58:36.861Z</updated>
     
@@ -480,21 +480,21 @@ public class SortMapReduce extends Configured implements Tool {
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
     
-      <category term="logback" scheme="http://chenxiaoqiong.com/categories/develop/logback/"/>
+      <category term="logback" scheme="http://www.chenxiaoqiong.com/categories/develop/logback/"/>
     
     
-      <category term="日志配置" scheme="http://chenxiaoqiong.com/tags/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE/"/>
+      <category term="日志配置" scheme="http://www.chenxiaoqiong.com/tags/%E6%97%A5%E5%BF%97%E9%85%8D%E7%BD%AE/"/>
     
-      <category term="logback" scheme="http://chenxiaoqiong.com/tags/logback/"/>
+      <category term="logback" scheme="http://www.chenxiaoqiong.com/tags/logback/"/>
     
   </entry>
   
   <entry>
     <title>tomcat配置https协议</title>
-    <link href="http://chenxiaoqiong.com/articles/https/"/>
-    <id>http://chenxiaoqiong.com/articles/https/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/https/"/>
+    <id>http://www.chenxiaoqiong.com/articles/https/</id>
     <published>2016-11-25T08:34:53.000Z</published>
     <updated>2017-01-24T05:04:20.067Z</updated>
     
@@ -548,21 +548,21 @@ public class SortMapReduce extends Configured implements Tool {
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
     
-      <category term="https" scheme="http://chenxiaoqiong.com/categories/develop/https/"/>
+      <category term="https" scheme="http://www.chenxiaoqiong.com/categories/develop/https/"/>
     
     
-      <category term="https" scheme="http://chenxiaoqiong.com/tags/https/"/>
+      <category term="https" scheme="http://www.chenxiaoqiong.com/tags/https/"/>
     
-      <category term="tomcat" scheme="http://chenxiaoqiong.com/tags/tomcat/"/>
+      <category term="tomcat" scheme="http://www.chenxiaoqiong.com/tags/tomcat/"/>
     
   </entry>
   
   <entry>
     <title>生活如雨，有伞就好！</title>
-    <link href="http://chenxiaoqiong.com/articles/life/"/>
-    <id>http://chenxiaoqiong.com/articles/life/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/life/"/>
+    <id>http://www.chenxiaoqiong.com/articles/life/</id>
     <published>2016-11-04T07:02:03.000Z</published>
     <updated>2016-11-04T08:26:34.547Z</updated>
     
@@ -581,19 +581,19 @@ public class SortMapReduce extends Configured implements Tool {
     
     </summary>
     
-      <category term="生活" scheme="http://chenxiaoqiong.com/categories/life/"/>
+      <category term="生活" scheme="http://www.chenxiaoqiong.com/categories/life/"/>
     
-      <category term="美文" scheme="http://chenxiaoqiong.com/categories/life/essay/"/>
+      <category term="美文" scheme="http://www.chenxiaoqiong.com/categories/life/essay/"/>
     
     
-      <category term="美文" scheme="http://chenxiaoqiong.com/tags/%E7%BE%8E%E6%96%87/"/>
+      <category term="美文" scheme="http://www.chenxiaoqiong.com/tags/%E7%BE%8E%E6%96%87/"/>
     
   </entry>
   
   <entry>
     <title>idea(IntelliJ IDEA)快捷键</title>
-    <link href="http://chenxiaoqiong.com/articles/idea/"/>
-    <id>http://chenxiaoqiong.com/articles/idea/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/idea/"/>
+    <id>http://www.chenxiaoqiong.com/articles/idea/</id>
     <published>2016-11-03T02:09:23.000Z</published>
     <updated>2016-11-03T06:37:23.175Z</updated>
     
@@ -612,21 +612,21 @@ public class SortMapReduce extends Configured implements Tool {
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
     
-      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.com/categories/develop/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://www.chenxiaoqiong.com/categories/develop/IntelliJ-IDEA/"/>
     
     
-      <category term="IntelliJ IDEA" scheme="http://chenxiaoqiong.com/tags/IntelliJ-IDEA/"/>
+      <category term="IntelliJ IDEA" scheme="http://www.chenxiaoqiong.com/tags/IntelliJ-IDEA/"/>
     
   </entry>
   
   <entry>
     <title>Nginx安装与配置</title>
-    <link href="http://chenxiaoqiong.com/articles/nginx/"/>
-    <id>http://chenxiaoqiong.com/articles/nginx/</id>
+    <link href="http://www.chenxiaoqiong.com/articles/nginx/"/>
+    <id>http://www.chenxiaoqiong.com/articles/nginx/</id>
     <published>2016-10-17T09:04:27.000Z</published>
-    <updated>2017-03-17T05:59:02.875Z</updated>
+    <updated>2017-05-02T07:24:19.736Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h2><h3 id="安装pcre"><a href="#安装pcre" class="headerlink" title="安装pcre"></a>安装pcre</h3><ol>
 <li>获取pcre编译安装包，在<a href="http://www.pcre.org/" target="_blank" rel="external">http://www.pcre.org/</a> 上可以获取当前最新的版本</li>
@@ -643,7 +643,7 @@ public class SortMapReduce extends Configured implements Tool {
 </ol>
 <h3 id="安装zlib"><a href="#安装zlib" class="headerlink" title="安装zlib"></a>安装zlib</h3><ol>
 <li>获取zlib编译安装包，在<a href="http://www.zlib.net/上可以获取当前最新的版本。" target="_blank" rel="external">http://www.zlib.net/上可以获取当前最新的版本。</a></li>
-<li>解压缩openssl-xx.tar.gz包。</li>
+<li>解压缩zlib-xx.tar.gz包。</li>
 <li>进入解压缩目录，执行./configure。</li>
 <li>make &amp; make install</li>
 </ol>
@@ -656,7 +656,6 @@ public class SortMapReduce extends Configured implements Tool {
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">可能出现错误：</div><div class="line">make: *** No rule to make target <span class="string">'build'</span>, needed by <span class="string">'default'</span>.  Stop.</div><div class="line">解决办法：</div><div class="line">./configure  --sbin-path=/usr/<span class="built_in">local</span>/nginx/nginx-1.11.3/nginx\</div><div class="line">--pid-path=/usr/<span class="built_in">local</span>/nginx/nginx-1.11.3/nginx.pid\</div><div class="line">--with-http_ssl_module\</div><div class="line">//指定依赖路径`</div><div class="line">--with-pcre=/usr/<span class="built_in">local</span>/nginx/pcre-8.36 \</div><div class="line">--with-zlib=/usr/<span class="built_in">local</span>/nginx/zlib-1.2.8 \</div><div class="line">--with-openssl=/usr/<span class="built_in">local</span>/nginx/openssl-1.0.1h</div></pre></td></tr></table></figure>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="nginx启动与重启"><a href="#nginx启动与重启" class="headerlink" title="nginx启动与重启"></a>nginx启动与重启</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> usr/<span class="built_in">local</span>/nginx/sbin</div><div class="line">./nginx</div><div class="line">如果无法启动执行命令：</div><div class="line">ln <span class="_">-s</span> /usr/<span class="built_in">local</span>/lib/libpcre.so.1 /lib64</div><div class="line">重启：</div><div class="line">./nginx –s reload</div></pre></td></tr></table></figure>
 <h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><p>启动之后打开浏览器输入localhost，出现如下页面，恭喜你安装成功！<br><img src="/img/imgs/nginx.jpg" alt=""></p>
-<p>更详细可参考：<a href="http://www.cnblogs.com/jianxie/p/3990377.html" target="_blank" rel="external">http://www.cnblogs.com/jianxie/p/3990377.html</a></p>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="负载均衡的4种配置方式"><a href="#负载均衡的4种配置方式" class="headerlink" title="负载均衡的4种配置方式"></a>负载均衡的4种配置方式</h3><ul>
 <li><p>轮询（默认）<br> 每个请求按时间顺序逐一分配到不同的后端服务器，如果后端服务器down掉，能自动剔除。 </p>
 </li>
@@ -679,12 +678,12 @@ public class SortMapReduce extends Configured implements Tool {
     
     </summary>
     
-      <category term="技术" scheme="http://chenxiaoqiong.com/categories/develop/"/>
+      <category term="技术" scheme="http://www.chenxiaoqiong.com/categories/develop/"/>
     
-      <category term="nginx" scheme="http://chenxiaoqiong.com/categories/develop/nginx/"/>
+      <category term="nginx" scheme="http://www.chenxiaoqiong.com/categories/develop/nginx/"/>
     
     
-      <category term="nginx" scheme="http://chenxiaoqiong.com/tags/nginx/"/>
+      <category term="nginx" scheme="http://www.chenxiaoqiong.com/tags/nginx/"/>
     
   </entry>
   

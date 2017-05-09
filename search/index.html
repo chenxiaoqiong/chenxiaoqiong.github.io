@@ -60,13 +60,9 @@
 </script>
 <div>
 		
-			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="ChenXiaoqiong" title="ChenXiaoqiong"/></a>
-			</div>
-			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="ChenXiaoqiong">ChenXiaoqiong</a></h1>
-				<a class="blog-motto">混迹在程序界的一枚小女子 ^♪ ^♪ ^♪</a>
+			     博客已搬家哦~
+				<h1 class="site-name"><a href="http://www.chenxiaoqiong.com" class="blog-motto">点击前往</a></h1>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
 			</a></div>
@@ -76,19 +72,12 @@
 					 
 						<li><a href="/">首页</a></li>
 					
-						<li><a href="/archives">归档</a></li>
-					
-						<li><a href="/categories/develop/">技术</a></li>
-					
-						<li><a href="/articles/life/">生活</a></li>
-					
-						<li><a href="/">其他</a></li>
-					
 					<li>
 					
-                                            <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
-                                            <label>Search</label>
-                                        <input name="s" type="hidden" value= 18810832440 ><input type="text" name="q" size="30" placeholder="搜索"><br>
+                            <form class="search" action=http://search.chenxiaoqiong.com/cse/search target="_blank">
+                                <label>Search</label>
+                                <input id="bdcsMain" name="s" type="hidden" value= 1874337589918315717 ><input type="text" name="q" size="30" placeholder="搜索">
+							</form>
 					
 					</li>
 				</ul>
@@ -97,34 +86,41 @@
 
       </header>
       <div id="container">
+        <script type="text/javascript">
+    var cse;
+    
+    //处理结果回调函数示例
+    function display (data) {
+        console.log(data);
+    }
+
+    //初始化回调函数示例
+    function init () {
+        cse = new BCse.Search("2123860390311207543");    //参数为您的API引擎ID，已自动填写，必需。
         
-<!--注意下面到</script>结束的代码块要替换成自己上面保存的Install Code代码--!>
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-  
-  _st('install','fjjszQqsPW9Bb1W3jQ3v','2.0.0');
+        cse.getResult("关键词", display);    //此方法获取搜索结果，参数1为搜索词，参数2为您获取到结果后想要执行的回调函数。
+    }
+
+    function loadScript () { 
+        var script = document.createElement("script"); 
+        script.type = "text/javascript";
+        script.charset = "utf-8";
+        script.src = "http://zhannei.baidu.com/api/customsearch/apiaccept?sid=2123860390311207543&v=2.0&callback=init";
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(script, s);
+    }
+
+    loadScript();
 </script>
 
 
     </div>
-    <footer>			
-<script type="text/javascript">
-  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
-  
-  _st('install','fjjszQqsPW9Bb1W3jQ3v','2.0.0');
-</script>
-
+    <footer>
 <div id="footer" >
     
             <p class="copyright"> © 2017 
 		
-		<a href="http://chenxiaoqiong.com" target="_blank" title="ChenXiaoqiong">ChenXiaoqiong</a>
+		<a href="http://www.chenxiaoqiong.com" target="_blank" title="ChenXiaoqiong">ChenXiaoqiong</a>
 		
             && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
 			</p>
