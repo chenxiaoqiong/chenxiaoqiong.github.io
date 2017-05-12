@@ -90,9 +90,11 @@
       <category term="linux" scheme="http://chenxiaoqiong.com/categories/develop/linux/"/>
     
     
+      <category term="tomcat" scheme="http://chenxiaoqiong.com/tags/tomcat/"/>
+    
       <category term="linux" scheme="http://chenxiaoqiong.com/tags/linux/"/>
     
-      <category term="tomcat" scheme="http://chenxiaoqiong.com/tags/tomcat/"/>
+      <category term="nginx" scheme="http://chenxiaoqiong.com/tags/nginx/"/>
     
       <category term="环境搭建" scheme="http://chenxiaoqiong.com/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     
@@ -101,8 +103,6 @@
       <category term="java" scheme="http://chenxiaoqiong.com/tags/java/"/>
     
       <category term="maven" scheme="http://chenxiaoqiong.com/tags/maven/"/>
-    
-      <category term="nginx" scheme="http://chenxiaoqiong.com/tags/nginx/"/>
     
   </entry>
   

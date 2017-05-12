@@ -24,7 +24,7 @@ http是超文本传输协议">
     
     
     
-    <link rel="alternate" href="/atom.xml" title="ChenXiaoqiong" type="application/atom+xml">
+    <link rel="alternate" href="atom.xml" title="ChenXiaoqiong" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -47,33 +47,13 @@ http是超文本传输协议">
 
   <body>
     <header>
-      
-<!-- 百度自动推送 --!>
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
-<!-- 不蒜子统计页面访问量 --!>
-<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
-</script>
-<div>
+      <div>
 		
 			<div id="textlogo">
 				<h1 class="site-name"><a href="/" title="ChenXiaoqiong">ChenXiaoqiong</a></h1>
 				<a class="blog-motto">混迹在程序界的一枚小女子 ^♪ ^♪ ^♪</a>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -83,18 +63,11 @@ http是超文本传输协议">
 					
 						<li><a href="/archives">归档</a></li>
 					
-						<li><a href="/categories/develop/">技术</a></li>
-					
-						<li><a href="/articles/life/">生活</a></li>
-					
-						<li><a href="/">其他</a></li>
-					
 					<li>
 					
-                            <form class="search" action=http://search.chenxiaoqiong.com/cse/search target="_blank">
-                                <label>Search</label>
-                                <input id="bdcsMain" name="s" type="hidden" value= 1874337589918315717 ><input type="text" name="q" size="30" placeholder="搜索">
-							</form>
+                                            <form class="search" action=http://zhannei.baidu.com/cse/search target="_blank">
+                                            <label>Search</label>
+                                        <input name="s" type="hidden" value= null ><input type="text" name="q" size="30" placeholder="Search"><br>
 					
 					</li>
 				</ul>
@@ -106,22 +79,6 @@ http是超文本传输协议">
       <div id="main" class="post" itemscope itemprop="blogPost">
 	<article itemprop="articleBody"> 
 		<header class="article-info clearfix">
-<!-- 百度自动推送 -->
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
   <h1 itemprop="name">
     
       <a href="/articles/https/" title="tomcat配置https协议" itemprop="url">tomcat配置https协议</a>
@@ -132,7 +89,7 @@ http是超文本传输协议">
     </p>
   <p class="article-time">
     <time datetime="2016-11-25T08:34:53.000Z" itemprop="datePublished">2016-11-25</time>
-    更新日期:<time datetime="2017-01-24T05:04:20.067Z" itemprop="dateModified">2017-01-24</time>
+    Updated:<time datetime="2017-01-24T05:04:20.067Z" itemprop="dateModified">2017-01-24</time>
     
   </p>
 </header>
@@ -140,7 +97,7 @@ http是超文本传输协议">
 		
 		
 		<div id="toc" class="toc-article">
-			<strong class="toc-title">文章目录</strong>
+			<strong class="toc-title">Contents</strong>
 		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS协议详解"><span class="toc-number">1.</span> <span class="toc-text">HTTPS协议详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tomcat配置"><span class="toc-number">2.</span> <span class="toc-text">tomcat配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#windows环境"><span class="toc-number">2.1.</span> <span class="toc-text">windows环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux环境"><span class="toc-number">2.2.</span> <span class="toc-text">linux环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.3.</span> <span class="toc-text">测试效果</span></a></li></ol></li></ol>
 		</div>
 		
@@ -184,17 +141,30 @@ http是超文本传输协议">
 </ol>
 <h3 id="测试效果"><a href="#测试效果" class="headerlink" title="测试效果"></a>测试效果</h3><p>此配置是自己生成ssl证书，不被浏览器信任（具体表现https前面有个X）：<br><img src="/img/imgs/https5.jpg" alt=""></p>
   
-	 <div style="float:right;font-size:12px;">本文总阅读量 <span id="busuanzi_value_page_pv"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div> 
-
-    <div id="cyEmoji" role="cylabs" data-use="emoji"></div>
-
 	</div>
-		<!-- <footer class="article-footer clearfix">
+		<footer class="article-footer clearfix">
 
-<div id="cyEmoji" role="cylabs" data-use="emoji"></div>
-</footer> -->    
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/https/">https</a><a href="/tags/tomcat/">tomcat</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/develop/">技术</a>►<a class="article-category-link" href="/categories/develop/https/">https</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://chenxiaoqiong.com/articles/https/" data-title="tomcat配置https协议 | ChenXiaoqiong" data-tsina="null" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
 	</article>
-	
 	
 <nav class="article-nav clearfix">
  
@@ -217,49 +187,24 @@ http是超文本传输协议">
 
 </nav>
 
-	<section class="comment">
-
-<!-- 代码1：放在页面需要展示的位置  -->
-<!-- 如果您配置过sourceid，建议在div标签中配置sourceid、cid(分类id)，没有请忽略  -->
-<!-- <div id="cyReward" role="cylabs" data-use="reward"></div> -->
-
-<div id="cyEmoji" role="cylabs" data-use="emoji"></div>
-<!-- 代码2：用来读取评论框配置，此代码需放置在代码1之后。 -->
-<!-- 如果当前页面有评论框，代码2请勿放置在评论框代码之前。 -->
-<!-- 如果页面同时使用多个实验室项目，以下代码只需要引入一次，只配置上面的div标签即可 -->
-<script type="text/javascript" charset="utf-8" src="https://changyan.itc.cn/js/lib/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="https://changyan.sohu.com/js/changyan.labs.https.js?appid=cysXdSE32"></script>  
-
-<div id="SOHUCS"></div> 
-<script type="text/javascript"> 
-(function(){ 
-var appid = 'cysXdSE32'; 
-var conf = 'aac77fe69d020afd312d469327ab0646'; 
-var width = window.innerWidth || document.documentElement.clientWidth; 
-if (width < 960) { 
-window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="http://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("http://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>	
-
-    <!-- 百度站站内搜索相关内容 --><br>
-	<div>本站相关内容</div>
-	<script type="text/javascript">(function(){document.write(unescape('%3Cdiv id="bdcsFrameBox"%3E%3C/div%3E'));var bdcs = document.createElement("script");bdcs.type = "text/javascript";bdcs.async = true;bdcs.src = "http://znsv.baidu.com/customer_search/api/rs?sid=1874337589918315717" + "&plate_url=" + encodeURIComponent(window.location.href) + "&t=" + Math.ceil(new Date()/3600000);var s = document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bdcs, s);})();</script>
-
+	
+<section class="comment">
+	
+	<div class="ds-thread" data-title="tomcat配置https协议" data-thread-key="https" data-author-key="ChenXiaoqiong" data-url="http://chenxiaoqiong.com/post/https"></div>
 	
 </section>
 
 
-	
-	
-</div>
-
-      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="Show Sidebar"></a></div>
 
   <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
+  <strong class="toc-title">Contents</strong>
   <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS协议详解"><span class="toc-number">1.</span> <span class="toc-text">HTTPS协议详解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tomcat配置"><span class="toc-number">2.</span> <span class="toc-text">tomcat配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#windows环境"><span class="toc-number">2.1.</span> <span class="toc-text">windows环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#linux环境"><span class="toc-number">2.2.</span> <span class="toc-text">linux环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#测试效果"><span class="toc-number">2.3.</span> <span class="toc-text">测试效果</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
-<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<div class="closeaside"><a class="closebutton" href="#" title="Hide Sidebar"></a></div>
 <aside class="clearfix">
 <div id="authorInfo">
 	
@@ -267,11 +212,7 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 	
 	<div class="social-list" class="clearfix">
 		
-		<a href="http://weibo.com//u/5121672767?refer_flag=1005055014_&amp;is_hot=1" target="_blank" title="weibo"></a>
 		
-		
-		
-		<a href="https://github.com/chenxiaoqiong" target="_blank" title="github"></a>
 		
 		
 		
@@ -279,15 +220,35 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 </div>
 
   
-<div class="category-block">
-  <h3 class="asidetitle">分类</h3>
-     <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/develop/">技术</a><span class="category-list-count">8</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/develop/IntelliJ-IDEA/">IntelliJ IDEA</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/MapReduce/">MapReduce</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/https/">https</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/linux/">linux</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/logback/">logback</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/develop/nginx/">nginx</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/life/">生活</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/life/essay/">美文</a><span class="category-list-count">1</span></li></ul></li></ul>
+<div class="categorieslist">
+	<p class="asidetitle">Categories</p>
+		<ul>
+		
+			<li><a href="/categories/develop/IntelliJ-IDEA/" title="IntelliJ IDEA">IntelliJ IDEA<sup>1</sup></a></li>
+		
+			<li><a href="/categories/develop/MapReduce/" title="MapReduce">MapReduce<sup>2</sup></a></li>
+		
+			<li><a href="/categories/develop/https/" title="https">https<sup>1</sup></a></li>
+		
+			<li><a href="/categories/develop/linux/" title="linux">linux<sup>2</sup></a></li>
+		
+			<li><a href="/categories/develop/logback/" title="logback">logback<sup>1</sup></a></li>
+		
+			<li><a href="/categories/develop/nginx/" title="nginx">nginx<sup>1</sup></a></li>
+		
+			<li><a href="/categories/develop/" title="技术">技术<sup>8</sup></a></li>
+		
+			<li><a href="/categories/life/" title="生活">生活<sup>1</sup></a></li>
+		
+			<li><a href="/categories/life/essay/" title="美文">美文<sup>1</sup></a></li>
+		
+		</ul>
 </div>
 
 
   
 <div class="tagslist">
-	<p class="asidetitle">标签</p>
+	<p class="asidetitle">Tags</p>
 		<ul class="clearfix">
 		
 			<li><a href="/tags/Hadoop/" title="Hadoop">Hadoop<sup>2</sup></a></li>
@@ -327,37 +288,38 @@ window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="tex
 
 
   <div class="linkslist">
-  <p class="asidetitle">友情链接</p>
+  <p class="asidetitle">Links</p>
     <ul>
-      <li><a href="http://pgeeker.com/" target="_blank" title="coney">pgeeker's Blog</a></li>
+      <li><a href="http://hexo.io" target="_blank" title="Hexo">Hexo</a></li>
       <li><a href="http://gengbiao.me" target="_blank" title="coney">coney's Blog</a></li>
     </ul>
 </div>
 
 
   <div class="rsspart">
-	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+	<a href="atom.xml" target="_blank" title="rss">RSS</a>
 </div>
+
+  
+  <div class="tagcloudlist">
+    <p class="asidetitle">Tag Cloud</p>
+    <div class="tagcloudlist clearfix">
+       <a href="/tags/Hadoop/" style="font-size: 20px;">Hadoop</a> <a href="/tags/IntelliJ-IDEA/" style="font-size: 10px;">IntelliJ IDEA</a> <a href="/tags/MapReduce/" style="font-size: 20px;">MapReduce</a> <a href="/tags/crontab/" style="font-size: 10px;">crontab</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/linux/" style="font-size: 20px;">linux</a> <a href="/tags/logback/" style="font-size: 10px;">logback</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 20px;">nginx</a> <a href="/tags/tomcat/" style="font-size: 20px;">tomcat</a> <a href="/tags/大数据/" style="font-size: 20px;">大数据</a> <a href="/tags/日志配置/" style="font-size: 10px;">日志配置</a> <a href="/tags/环境搭建/" style="font-size: 10px;">环境搭建</a> <a href="/tags/美文/" style="font-size: 10px;">美文</a>
+    </div>
+  </div>
+
 
 </aside>
 </div>
     </div>
-    <footer>
-<div id="footer" >
+    <footer><div id="footer" >
     
             <p class="copyright"> © 2017 
 		
 		<a href="http://chenxiaoqiong.com" target="_blank" title="ChenXiaoqiong">ChenXiaoqiong</a>
 		
-            && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
-			</p>
-			
-			<p class="copyright">
-			<span id="busuanzi_container_site_pv">Total visits is <span id="busuanzi_value_site_pv"></span></span> &&
-			<span id="busuanzi_container_site_uv">The total number of visitors is <span id="busuanzi_value_site_uv"></span></span></p>
-			
-			</div>
-			
+            && Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> && Theme by <a href="http://gengbiao.me" target="_blank" title="coney">coney</a>
+            </div>
 </footer>
     <script src="/js/jquery-2.1.0.min.js"></script>
 <script type="text/javascript">
@@ -469,29 +431,20 @@ $(document).ready(function(){
 </script>
 
 
-
-
-
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
 <script type="text/javascript">
-$(document).ready(function(){ 
-  $('.article-content').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox')) return;
-      var alt = this.alt;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'article' + i);
-    });
-  });
-  if($.fancybox){
-    $('.fancybox').fancybox();
-  }
-}); 
-</script>
+  var duoshuoQuery = {short_name:"null"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
 
 
 
