@@ -11,22 +11,6 @@
         <title>linux环境搭建（java+mysql+maven+tomcat+nginx）</title>
         <pubTime>2017-04-12T11:04:00.000Z</pubTime>
         
-        <tag>linux</tag>
-         
-        <tag>tomcat</tag>
-         
-        <tag>环境搭建</tag>
-         
-        <tag>mysql</tag>
-         
-        <tag>java</tag>
-         
-        <tag>maven</tag>
-         
-        <tag>nginx</tag>
-         
-         
-           
              
               <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
           
@@ -46,10 +30,7 @@
         <title>Nginx安装与配置</title>
         <pubTime>2016-10-17T09:04:27.000Z</pubTime>
         
-        <tag>nginx</tag>
-         
-         
-           
+       
              
               <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
           
@@ -71,12 +52,7 @@
         <display>
         <title>Linux Crontab 定时任务</title>
         <pubTime>2017-04-05T03:04:00.000Z</pubTime>
-        
-        <tag>linux</tag>
-         
-        <tag>crontab</tag>
-         
-         
+       
            
              
               <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
@@ -97,12 +73,7 @@
         <title>MapReduce实例（一）</title>
         <pubTime>2017-03-16T09:04:00.000Z</pubTime>
         
-        <tag>Hadoop</tag>
-         
-        <tag>MapReduce</tag>
-         
-        <tag>大数据</tag>
-         
+      
          
            
              
@@ -124,12 +95,6 @@
         <title>MapReduce实例（二）</title>
         <pubTime>2017-03-16T09:04:00.000Z</pubTime>
         
-        <tag>Hadoop</tag>
-         
-        <tag>MapReduce</tag>
-         
-        <tag>大数据</tag>
-         
          
            
              
@@ -150,12 +115,7 @@
         <display>
         <title>tomcat配置https协议</title>
         <pubTime>2016-11-25T08:34:53.000Z</pubTime>
-        
-        <tag>https</tag>
-         
-        <tag>tomcat</tag>
-         
-         
+      
            
              
               <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
@@ -176,10 +136,6 @@
         <title>logback配置详解</title>
         <pubTime>2016-12-29T09:47:05.000Z</pubTime>
         
-        <tag>日志配置</tag>
-         
-        <tag>logback</tag>
-         
          
            
              
@@ -202,9 +158,7 @@
         <title>生活如雨，有伞就好！</title>
         <pubTime>2016-11-04T07:02:03.000Z</pubTime>
         
-        <tag>美文</tag>
-         
-         
+       
            
              
               <breadCrumb title="生活" url="http://chenxiaoqiong.com/categories/life/"/>
@@ -224,11 +178,7 @@
         <display>
         <title>idea(IntelliJ IDEA)快捷键</title>
         <pubTime>2016-11-03T02:09:23.000Z</pubTime>
-        
-        <tag>IntelliJ IDEA</tag>
-         
-         
-           
+      
              
               <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
           
