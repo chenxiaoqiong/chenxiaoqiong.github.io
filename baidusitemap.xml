@@ -4,7 +4,7 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/linux-java-mysql-maven-tomcat-nginx/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/linux-java-mysql-maven-tomcat-nginx/</loc>
     <lastmod>2017-05-03T07:18:47.710Z</lastmod>
     <data>
         <display>
@@ -28,10 +28,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="linux" url="http://chenxiaoqiong.com/categories/develop/linux/"/>
+              <breadCrumb title="linux" url="http://www.chenxiaoqiong.com/categories/develop/linux/"/>
           
         </display>
     </data>
@@ -39,7 +39,7 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/nginx/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/nginx/</loc>
     <lastmod>2017-05-02T07:24:19.736Z</lastmod>
     <data>
         <display>
@@ -51,10 +51,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="nginx" url="http://chenxiaoqiong.com/categories/develop/nginx/"/>
+              <breadCrumb title="nginx" url="http://www.chenxiaoqiong.com/categories/develop/nginx/"/>
           
         </display>
     </data>
@@ -65,7 +65,7 @@
     
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/crontab/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/crontab/</loc>
     <lastmod>2017-04-05T07:42:39.571Z</lastmod>
     <data>
         <display>
@@ -79,10 +79,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="linux" url="http://chenxiaoqiong.com/categories/develop/linux/"/>
+              <breadCrumb title="linux" url="http://www.chenxiaoqiong.com/categories/develop/linux/"/>
           
         </display>
     </data>
@@ -90,7 +90,7 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/mapreduce1/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/mapreduce1/</loc>
     <lastmod>2017-04-05T02:39:11.246Z</lastmod>
     <data>
         <display>
@@ -106,10 +106,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="MapReduce" url="http://chenxiaoqiong.com/categories/develop/MapReduce/"/>
+              <breadCrumb title="MapReduce" url="http://www.chenxiaoqiong.com/categories/develop/MapReduce/"/>
           
         </display>
     </data>
@@ -117,7 +117,7 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/mapreduce2/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/mapreduce2/</loc>
     <lastmod>2017-04-05T02:38:48.965Z</lastmod>
     <data>
         <display>
@@ -133,10 +133,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="MapReduce" url="http://chenxiaoqiong.com/categories/develop/MapReduce/"/>
+              <breadCrumb title="MapReduce" url="http://www.chenxiaoqiong.com/categories/develop/MapReduce/"/>
           
         </display>
     </data>
@@ -144,7 +144,7 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/https/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/https/</loc>
     <lastmod>2017-01-24T05:04:20.067Z</lastmod>
     <data>
         <display>
@@ -158,10 +158,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="https" url="http://chenxiaoqiong.com/categories/develop/https/"/>
+              <breadCrumb title="https" url="http://www.chenxiaoqiong.com/categories/develop/https/"/>
           
         </display>
     </data>
@@ -169,7 +169,7 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/logback/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/logback/</loc>
     <lastmod>2017-01-24T04:58:36.861Z</lastmod>
     <data>
         <display>
@@ -183,10 +183,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="logback" url="http://chenxiaoqiong.com/categories/develop/logback/"/>
+              <breadCrumb title="logback" url="http://www.chenxiaoqiong.com/categories/develop/logback/"/>
           
         </display>
     </data>
@@ -195,7 +195,7 @@
     
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/life/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/life/</loc>
     <lastmod>2016-11-04T08:26:34.547Z</lastmod>
     <data>
         <display>
@@ -207,10 +207,10 @@
          
            
              
-              <breadCrumb title="生活" url="http://chenxiaoqiong.com/categories/life/"/>
+              <breadCrumb title="生活" url="http://www.chenxiaoqiong.com/categories/life/"/>
           
              
-              <breadCrumb title="美文" url="http://chenxiaoqiong.com/categories/life/essay/"/>
+              <breadCrumb title="美文" url="http://www.chenxiaoqiong.com/categories/life/essay/"/>
           
         </display>
     </data>
@@ -218,7 +218,7 @@
 
     
   <url>
-    <loc>http://chenxiaoqiong.com/articles/idea/</loc>
+    <loc>http://www.chenxiaoqiong.com/articles/idea/</loc>
     <lastmod>2016-11-03T06:37:23.175Z</lastmod>
     <data>
         <display>
@@ -230,10 +230,10 @@
          
            
              
-              <breadCrumb title="技术" url="http://chenxiaoqiong.com/categories/develop/"/>
+              <breadCrumb title="技术" url="http://www.chenxiaoqiong.com/categories/develop/"/>
           
              
-              <breadCrumb title="IntelliJ IDEA" url="http://chenxiaoqiong.com/categories/develop/IntelliJ-IDEA/"/>
+              <breadCrumb title="IntelliJ IDEA" url="http://www.chenxiaoqiong.com/categories/develop/IntelliJ-IDEA/"/>
           
         </display>
     </data>
